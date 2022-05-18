@@ -5,9 +5,9 @@ def pointOfSale():
   print("Welcome to Onn the way supermarket")
   print("1. Bread 50 \n2Eggs 15 each \n3Milk 55 \nMaizeFlour 120");
 
-
-  # item = input("Enter the option of the goods (1 for bread)")
-  # amount = input("Enter the quantity needed")
+  #getting inout from user on the products 
+  item = input("Enter the option of the goods (1 for bread)")
+  amount = input("Enter the quantity needed")
 
 
   # if item == 1:
