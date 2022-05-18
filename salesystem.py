@@ -1,6 +1,6 @@
 class pointOfSale:
   def __init__(self, total=0):
-    self.total = total
+    self.total = 0
     self.customer()
     self.shop()
     
@@ -18,7 +18,6 @@ class pointOfSale:
     
     item = input("Enter the option")
     quantity = input("Enter the quantity")
-    total = price * quantity
     
     
     if item == 1:
@@ -31,7 +30,12 @@ class pointOfSale:
       print("Milk 55")
       price = 55
       
-  def shop():
+    total = price * quantity
+    print(total)
+
+      
+  def shop(self):
+    self.total = self.total + total
     print("All done")
    
     
