@@ -9,12 +9,12 @@ def pointOfSale():
   item = input("Enter the option of the goods (1 for bread)")
   amount = input("Enter the quantity needed")
 
-
-  # if item == 1:
-  #   price = 50
-  #   total = amount * price
-  #   print("Bread and the quantity is " + str(amount))
-  #   print("Your total is" + str(total))
+#making an if else to get total amount and price from the user 
+  if item == 1:
+    price = 50
+    total = amount * price
+    print("Bread and the quantity is " + str(amount))
+    print("Your total is" + str(total))
 
 
 def main():
