@@ -1,0 +1,6 @@
+Bread -- 50 
+Milk -- 45
+Eggs -- 15
+Wheat flour --130
+Maize flour -- 120
+Soda -- 120 
