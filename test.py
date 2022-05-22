@@ -23,23 +23,24 @@
   ##use replace for the update    
 
 def update_customer():
-  name = input("Enter the name for the data you want to delete")
-  with open('orders.txt') as books:
-    lines = books.readlines()
-  lines.sort()
-  with open('orders.txt', 'w') as sortedbooks:
-    sortedbooks.writelines(lines)
+  name=input("Enter the name") 
+  order=[]
+  for line in open("orders.txt", "r"):
+    if line.find(name):
+      words=line.split()
+      order.append(words)
+    
+                
+  print(words)     
+          
         
         
         
 def delete_customer():
   name = input("Enter the name for the data you want to delete")
-  with open("orders.txt", 'r') as f:
-    data = f.readlines()
-  with open("orders.txt", 'w') as f:
-    for line in data:
-      if line.remove("\n") == name:
-        f.write(line)
- 
+  f = open("orders.txt", "r")
+  for line in f:
+    if line.seek(name):
+      f.truncate()
  
 update_customer()        

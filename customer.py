@@ -5,7 +5,6 @@ def customer():
       
     #adding the customer to the customer list     
   def add_customer():
-    
     order = []
     name = input("Enter your name")
     item = input("Enter the item name")
@@ -18,7 +17,6 @@ def customer():
  
   if option == "1":
     add_customer()
-    quit()
   elif option == 2:
     update_customer()
   elif option == 3:

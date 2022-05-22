@@ -1,4 +1,4 @@
 ['mike ', 'eggs ', '3']
-['ricko ']sam 
 ['roy ', 'bread', '4']
-naz 
+['roy ', 'eggs ', '3']
+['ricko ', 'bread', '4']
