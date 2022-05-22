@@ -5,18 +5,20 @@ def customer():
       
     #adding the customer to the customer list     
   def add_customer():
+    
     order = []
-  name = input("Enter your name")
-  item = input("Enter the item name")
-  quantity = input("Enter the quaamtity of the item that you want to purchase")
+    name = input("Enter your name")
+    item = input("Enter the item name")
+    quantity = input("Enter the quaamtity of the item that you want to purchase")
   #try using the for loop to create an object to the next lines
-  order.extend([name, item, quantity])
-  with open("orders.txt", 'a') as f:
-    f.write(str(order) + "\n")
+    order.extend([name, item, quantity])
+    with open("orders.txt", 'a') as f:
+     f.write(str(order) + "\n")
 
  
   if option == "1":
     add_customer()
+    quit()
   elif option == 2:
     update_customer()
   elif option == 3:

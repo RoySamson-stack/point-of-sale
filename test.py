@@ -23,29 +23,23 @@
   ##use replace for the update    
 
 def update_customer():
-  item = input("Enter the product name to update")
-  order = []
-  with open("orders.txt", "r+") as f:
-    order.append(item)
-    f.append(str(order))
-  print(order)
-  
-  
+  name = input("Enter the name for the data you want to delete")
+  with open('orders.txt') as books:
+    lines = books.readlines()
+  lines.sort()
+  with open('orders.txt', 'w') as sortedbooks:
+    sortedbooks.writelines(lines)
+        
+        
+        
 def delete_customer():
-  lines = []
-# read file
-with open(r"orders.txt", 'r') as fp:
-    # read an store all lines into list
-    lines = fp.readlines()
-
-# Write file
-with open(r"orders.txt", 'w') as fp:
-    # iterate each line
-    for number, line in enumerate(lines):
-        # delete line 5 and 8. or pass any Nth line you want to remove
-        # note list index starts from 0
-        if number not in [4, 7]:
-            fp.write(line)
-# add_customer()        
-# delete_customer()       
-update_customer()
+  name = input("Enter the name for the data you want to delete")
+  with open("orders.txt", 'r') as f:
+    data = f.readlines()
+  with open("orders.txt", 'w') as f:
+    for line in data:
+      if line.remove("\n") == name:
+        f.write(line)
+ 
+ 
+update_customer()        
