@@ -1,6 +1,25 @@
-12~Ajay~4~A
-24~vijay~2~C
-56~Anthony~9~A
-67~Lennox~5~A
-30!rick~3~D
-30!Ajay~4~A
+Alfred 5
+Abdul 5
+Eliza 11 
+Harun 8 
+Rama 9 
+Fatma 11 
+Martin 12
+Nuray 7 
+Mustafa 7
+Nazan 7
+Yasin 13 
+Susan 8 
+Tabitha 12 
+Omar 5 
+Unat 11 
+Veli
+10 
+Zehra 11 
+Jale 8 
+Lale 9 
+Kerim 13 
+Pelin 7 
+Cecil 6 
+Berna 5 
+Deniz 12

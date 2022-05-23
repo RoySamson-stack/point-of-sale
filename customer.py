@@ -18,17 +18,22 @@ def customer():
      
      
   def delete_customer():
-    name=input("Enter the name to search ")
-    order = []
+    name=input("Enter the name to search ").strip()
+    newdata = ""
     f = open("customer.txt", "r+")
     file = f.readlines()
     for line in file:
-      if re.search(name, line):
-        words=line.strip(name)
-        file.remove(words)  
-        order.append(file)
-        f.write(str(order)) 
-    print(file)    
+      if name+"\n" in line:
+        words=line.strip(line)
+        file.remove(name+"\n")
+      if name in line:
+        file.remove(line)
+    print(file)
+    for name in file:
+      newdata += name
+
+    f = open("customer.txt", "w")
+    f.write(newdata)   
 
  
   if option == "1":

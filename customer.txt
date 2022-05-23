@@ -1,5 +1,3 @@
 ['bong ', 'nairobi', '0702683107']
 ['rick ', 'nakuru', '0789320']
 ['roy ', 'nairobi', '0112345']
-
-[["['bong ', 'nairobi', '0702683107']\n", "['roy ', 'nairobi', '0112345']\n", '\n']]

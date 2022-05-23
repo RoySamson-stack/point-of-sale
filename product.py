@@ -1,3 +1,4 @@
+import re
 from menu import *
 
 def product():
@@ -7,7 +8,7 @@ def product():
   option = input("Enter the opton you want")
   
   #reading the menu and printing it to the terminal for the user to see
-  for line in open("menu.txt", "r"):
+  for line in open("products.txt", "r"):
     print(str(line))
    
    
@@ -16,7 +17,7 @@ def product():
   def search_item():
     items=input("Enter the product name") 
     menu=[]
-    for line in open("orders.txt", "r"):
+    for line in open("products.txt", "r"):
       if line.find(items):
         words=line.split()
         menu.append(words)
@@ -37,15 +38,15 @@ def product():
   
   def delete_item():
     product=input("Enter the item name ")
-    products = []
+    products = ""
     f = open("products.txt", "r+")
     file = f.readlines()
     for line in file:
-     if re.search(name, line):
-        words=line.strip(name)
+     if re.search(product, line):
+        words=line.strip(product)
         file.remove(words)  
-        order.append(file)
-        f.write(str(order)) 
+        products.append(file)
+        f.write(str(products)) 
     print(file)    
       
   if option == "1":

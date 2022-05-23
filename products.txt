@@ -4,4 +4,3 @@ Eggs -- 15
 Wheat flour --130
 Maize flour -- 120
 Soda -- 120 
-[['cakes ', ' -- ', '50']]
