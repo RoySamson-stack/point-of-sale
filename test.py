@@ -29,4 +29,4 @@ def update_customer():
   print(words)     
                     
       
-update_customer()        
+delete_customer()        

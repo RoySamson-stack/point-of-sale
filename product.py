@@ -27,22 +27,35 @@ def product():
       
    #adding an item to the menu 
   def add_item():
-    menu = []
+    products = ""
     item = input("Enter the item to add to list")
     price = input("Enter the price")
     menu.extend([item," -- " ,price])
-    with open("menu.txt", "a") as f:
+    with open("products.txt", "a") as f:
       f.write(str(menu))
       
+  
+  def delete_item():
+    product=input("Enter the item name ")
+    products = []
+    f = open("products.txt", "r+")
+    file = f.readlines()
+    for line in file:
+     if re.search(name, line):
+        words=line.strip(name)
+        file.remove(words)  
+        order.append(file)
+        f.write(str(order)) 
+    print(file)    
       
   if option == "1":
     search_item()
   elif option == "2":
     add_item()
   elif option == "3":
-    update_option()
+    update_item()
   elif option == "4":
-    delete_option()  
+    delete_item()  
   elif option == "5":
     quit()      
   else:

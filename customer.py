@@ -13,29 +13,29 @@ def customer():
     order=[]
   #try using the for loop to create an object to the next lines
     order.extend( [name, address, phonenumber])
-    with open("orders.txt", 'a') as f:
+    with open("customer.txt", 'a') as f:
      f.write(str(order) + "\n")
      
      
   def delete_customer():
     name=input("Enter the name to search ")
-  order = []
-  f = open("orders.txt", "r+")
-  file = f.readlines()
-  for line in file:
-    if re.search(name, line):
-      words=line.strip(name)
-      file.remove(words)  
-      order.append(file)
-      f.write(str(order)) 
-  print(file)    
+    order = []
+    f = open("customer.txt", "r+")
+    file = f.readlines()
+    for line in file:
+      if re.search(name, line):
+        words=line.strip(name)
+        file.remove(words)  
+        order.append(file)
+        f.write(str(order)) 
+    print(file)    
 
  
   if option == "1":
     add_customer()
-  elif option == 2:
+  elif option == "2":
     update_customer()
-  elif option == 3:
+  elif option == "3":
     delete_customer()
   else:
     quit()  

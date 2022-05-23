@@ -1,3 +1,0 @@
-['bong ', 'nairobi', '0702683107']
-['rick ', 'nakuru', '0789320']
-['roy ', 'nairobi', '0112345']
