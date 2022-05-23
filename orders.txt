@@ -1,4 +1,3 @@
-['mike ', 'eggs ', '3']
-['roy ', 'bread', '4']
-['roy ', 'eggs ', '3']
-['ricko ', 'bread', '4']
+['bong ', 'nairobi', '0702683107']
+['rick ', 'nakuru', '0789320']
+['roy ', 'nairobi', '0112345']

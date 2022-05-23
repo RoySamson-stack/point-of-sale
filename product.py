@@ -8,7 +8,7 @@ def product():
   
   #reading the menu and printing it to the terminal for the user to see
   for line in open("menu.txt", "r"):
-    print(line)
+    print(str(line))
    
    
    #searching function for a user to input keywords
@@ -50,5 +50,5 @@ def product():
        
    
 if __name__ == "__main__":
-  purchase()
+  product()
         
