@@ -36,18 +36,23 @@ def product():
       f.write(str(menu))
       
   
-  def delete_item():
-    product=input("Enter the item name ")
-    products = ""
-    f = open("products.txt", "r+")
-    file = f.readlines()
-    for line in file:
-     if re.search(product, line):
-        words=line.strip(product)
-        file.remove(words)  
-        products.append(file)
-        f.write(str(products)) 
-    print(file)    
+    def delete_customer():
+      name=input("Enter the name to search ").strip()
+      newdata = ""
+      f = open("products.txt", "r+")
+      file = f.readlines()
+      for line in file:
+        if name+"\n" in line:
+          words=line.strip(line)
+          file.remove(name+"\n")
+        if name in line:
+          file.remove(line)
+      print(file)
+      for name in file:
+        newdata += name
+
+      f = open("products.txt", "w")
+      f.write(newdata)     
       
   if option == "1":
     search_item()
