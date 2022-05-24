@@ -14,7 +14,8 @@ class pointOfSale:
     print("*Thank You Come Again!!!*")
     quit()
     
-  #create the customer operations, producst operations, purchase operations , exit 
+    
+    #making the user pick an option of the service that they want to receive
   def shop():
     print("Welcome to the shop**")
     print("1. Customer operations \n2. Product operations \n3.Purchase operations \n4. Exit")

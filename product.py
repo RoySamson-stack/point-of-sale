@@ -34,8 +34,8 @@ def product():
    #function to update an item in the list        
   def update_item():
     item=input("Enter the item to search ").strip()
-    new_item = input("Enter the item update to update ")
-    price = input("Enter the address update")
+    new_item = input("Enter the item name update ")
+    price = input("Enter the price update")
     newdata = ""
     order=[]
     f = open("products.txt", "r+")
@@ -57,7 +57,7 @@ def product():
 
 
    #adding an item to the menu 
-  def delete_customer():
+  def delete_item():
     item=input("Enter the item to search ").strip()
     newdata = ""
     f = open("products.txt", "r+")
@@ -86,7 +86,8 @@ def product():
   elif option == "5":
     quit()      
   else:
-    print("Please enter a valid option")              
+    print("Please enter a valid option")
+    product()              
        
    
 if __name__ == "__main__":
