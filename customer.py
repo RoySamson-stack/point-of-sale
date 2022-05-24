@@ -16,7 +16,31 @@ def customer():
     with open("customer.txt", 'a') as f:
      f.write(str(order) + "\n")
      
-     
+  def update_customer():
+    name=input("Enter the name to search ").strip()
+    new_name = input("Enter the name update to update ")
+    address = input("Enter the address update")
+    phonenumber = input("Enter the phonenumber update")
+    newdata = ""
+    order=[]
+    f = open("customer.txt", "r+")
+    file = f.readlines()
+    order.extend( [new_name, address, phonenumber])
+    for line in file:
+      if name+"\n" in line:
+        words=line.strip(line)
+        file.remove(name+"\n")
+      if name in line:
+        file.remove(line)
+        file.append(str(order))
+    print(file)
+    for name in file:
+      newdata += name
+
+    f = open("customer.txt", "w")
+    f.write(newdata)
+
+
   def delete_customer():
     name=input("Enter the name to search ").strip()
     newdata = ""

@@ -20,12 +20,34 @@ def product():
     for line in open("products.txt", "r"):
       if line.find(items):
         words=line.split()
-        menu.append(words)
-    
-                
+        menu.append(words)            
     print(words)     
           
-      
+  def update_customer():
+    name=input("Enter the name to search ").strip()
+    new_name = input("Enter the name update to update ")
+    address = input("Enter the address update")
+    phonenumber = input("Enter the phonenumber update")
+    newdata = ""
+    order=[]
+    f = open("products.txt", "r+")
+    file = f.readlines()
+    order.extend( [new_name, address, phonenumber])
+    for line in file:
+      if name+"\n" in line:
+        words=line.strip(line)
+        file.remove(name+"\n")
+      if name in line:
+        file.remove(line)
+        file.append(str(order))
+    print(file)
+    for name in file:
+      newdata += name
+
+    f = open("products.txt", "w")
+    f.write(newdata)
+
+
    #adding an item to the menu 
   def add_item():
     products = ""
@@ -36,23 +58,23 @@ def product():
       f.write(str(menu))
       
   
-    def delete_customer():
-      name=input("Enter the name to search ").strip()
-      newdata = ""
-      f = open("products.txt", "r+")
-      file = f.readlines()
-      for line in file:
+  def delete_customer():
+    name=input("Enter the name to search ").strip()
+    newdata = ""
+    f = open("products.txt", "r+")
+    file = f.readlines()
+    for line in file:
         if name+"\n" in line:
           words=line.strip(line)
           file.remove(name+"\n")
         if name in line:
           file.remove(line)
-      print(file)
-      for name in file:
+    print(file)
+    for name in file:
         newdata += name
 
-      f = open("products.txt", "w")
-      f.write(newdata)     
+    f = open("products.txt", "w")
+    f.write(newdata)     
       
   if option == "1":
     search_item()
