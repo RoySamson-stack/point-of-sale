@@ -3,7 +3,7 @@ import re
 def customer():
  
   print("1. Add customer \n2. Update customer \n3. Delete customer \n4. Exit ")
-  option = input("Enter the opton you want")
+  option = input("Enter the option you want")
       
     #adding the customer to the customer list     
   def add_customer():
@@ -52,7 +52,7 @@ def customer():
     print(file)
     for name in file:
       newdata += name
-  #writing the new data to the file 
+  #writing the new data to the file
     f = open("customer.txt", "w")
     f.write(newdata)
 

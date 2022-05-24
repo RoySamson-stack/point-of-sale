@@ -1,11 +1,12 @@
 import re
-from menu import *
+from product import *
+from customer import *
 
 def product():
   
   #printing the option from which a user picks 
   print("1. Search item \n2. Add item \n3. Update item \n4. Delete item \n5. Exit ")
-  option = input("Enter the opton you want")
+  option = input("Enter the option you want")
   
   #reading the menu and printing it to the terminal for the user to see
   for line in open("products.txt", "r"):

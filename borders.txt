@@ -1,4 +1,0 @@
-['mike ', 'eggs ', '3']
-['ricko ']sam 
-['roy ', 'bread', '4']
-naz 
