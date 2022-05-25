@@ -1,3 +1,5 @@
 ['tonga ', 'nairobi', '070268']
 ['roy ', 'nairobi', '0112345']
 [UUID('37a90bdc-958c-4537-92a1-bbba8b23d48d'), 'ricko mode', 'naivasha', '092221']
+[UUID('484c5468-5242-4130-9e6f-b0928c19efd2'), 'Maureen', 'Kiambu', '089345']
+[UUID('fe82f1df-4742-4699-bd0b-90e4209adf28'), 'Meen', 'Isiolo', '098344']

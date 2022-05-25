@@ -1,28 +1,38 @@
 import re
 import uuid
 
+class Customer:
+  def __init__(self):
+    self.customer()
+    
+  def customer(self):
+        while True:
+          print("Select a Customer Operation.")
+          print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Exit" )
+          option = int(input("Enter your option"))
 
-def customer():
-      while True:
-        print("Select a Customer Operation.")
-        print("1. Add customer \n2. Update customer \n3. Delete customer \n4. exit" )
-        option = int(input("Enter your choice : \n"))
-
-        if option == 1:
-            add_customer()
-            break
-        elif option == 2:
-            update_customer()
-        elif option == 3:
-            delete_customer()
-            
-        elif option == 4:
-            view_customer()
-        else:
-            print("Invalid option")
-            add_customer()
+          if option == 1:
+              all_customers()
+          elif option == 2:
+              add_customer()
+          elif option == 3:
+              update_customer()
+          elif option == 4:
+              delete_customer()
+          elif option == 5:
+              quit()
+          else:  
+              print("Invalid option")
+              customer()
       
-    #adding the customer to the customer list     
+    #adding the customer to the customer list   
+def all_customers():
+  f = open("customer.txt", "r")
+  file = f.readlines()
+  
+  for line in file:
+    print(line)
+        
 def add_customer():
   myuuid = uuid.uuid4()
   name = input("Enter your name")
@@ -33,9 +43,11 @@ def add_customer():
   order.extend( [myuuid, name, address, phonenumber])
   with open("customer.txt", 'a') as f:
     f.write(str(order) + "\n")
+    print("Customer has been added")
   
     
-  #will try to add whereby a specific input field can be updated   
+  #will try to add whereby a specific input field can be updated 
+  #strip the line then split the name the change the name or specific input field  
 def update_customer():
   # print("1. Update name \n2. Update adress \n3. Update phonenumber \n4. Update all \n5. Exit")
   # option = input("Kindly pick an option")
@@ -55,8 +67,8 @@ def update_customer():
   order=[]
   f = open("customer.txt", "r+")
   file = f.readlines()
+  print(file)
   order.extend( [new_name, address, phonenumber])
-  
   for line in file:
     if name+"\n" in line:
       #striing the line with the name
@@ -100,4 +112,4 @@ def delete_customer():
 #upddating the customer in the list
 
 if __name__ == "__main__":
-  customer()
+ Customer()

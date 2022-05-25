@@ -2,29 +2,33 @@ import re
 from product import *
 from customer import *
 
-def product():
-  
-  #printing the option from which a user picks 
-  print("1. Search item \n2. Add item \n3. Update item \n4. Delete item \n5. Exit ")
-  option = input("Enter the option you want")
-  
-  for line in open("products.txt", "r"):
-    print(str(line))
-  while True:
-    if option == "1":
-      search_item()
-    elif option == "2":
-      add_item()
-    elif option == "3":
-      update_item()
-    elif option == "4":
-      delete_item()  
-    elif option == "5":
-      quit()      
-    else:
-      print("Please enter a valid option")
-      product()              
-       
+
+class Product:
+  def __init__(self):
+    self.product()
+    
+  def product(self):
+    #printing the option from which a user picks 
+    print("1. Search item \n2. Add item \n3. Update item \n4. Delete item \n5. Exit ")
+    option = input("Enter the option you want")
+    
+    for line in open("products.txt", "r"):
+      print(str(line))
+    while True:
+      if option == "1":
+        search_item()
+      elif option == "2":
+        add_item()
+      elif option == "3":
+        update_item()
+      elif option == "4":
+        delete_item()  
+      elif option == "5":
+        quit()      
+      else:
+        print("Please enter a valid option")
+        product()              
+        
   #reading the menu and printing it to the terminal for the user to see
 
    
@@ -95,5 +99,5 @@ def delete_item():
   
    
 if __name__ == "__main__":
-  product()
+  Product()
         
