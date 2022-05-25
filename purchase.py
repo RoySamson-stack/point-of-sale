@@ -15,7 +15,7 @@ having all this information
 def purchase():
   f = open("customer.txt", "r")
   ft = open("products.txt", "r")
-  f_customer = f.readlines()
+  f_customer = f.readlines()  
   ft_product = ft.readlines()
   
   #question do we have to take the customer name from user
