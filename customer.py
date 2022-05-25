@@ -92,8 +92,11 @@ def delete_customer():
   newdata = ""
   f = open("customer.txt", "r+")
   file = f.readlines()
+  # for line in f:
+  #     if re.search(name, line):
+  #         names=line.split()
   for line in file:
-    if name+"\n" in line:
+    if names+"\n" in line:
       #strip the line that has a match with the name theat has been entered
       words=line.strip(line)
       #removing the line completely from the file

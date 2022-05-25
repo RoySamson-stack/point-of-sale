@@ -45,6 +45,7 @@ def search_item():
   
   #function to add items to the item list   
 def add_item():
+  myuuid = uuid.uuid4()
   products = ""
   item = input("Enter the item to add to list")
   price = input("Enter the price")
@@ -99,5 +100,5 @@ def delete_item():
   
    
 if __name__ == "__main__":
-  Product()
+ Product()
         

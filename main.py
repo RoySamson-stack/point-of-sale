@@ -9,7 +9,7 @@ def shop():
     if operation == "1":
       Customer()
     elif operation == "2":
-      product()
+      Product()
     elif operation == "3":
       purchase()
     elif operation == '4':
