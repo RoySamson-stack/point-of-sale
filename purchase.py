@@ -1,20 +1,17 @@
 import re
-
+#add validation and check if name is twice then use the id the get the customer details
 def purchases():
   c = open("customer.txt", "r").readlines()
   p = open("products.txt", "r").readlines()
   name = input("Enter the customer name:").capitalize()
-
   names = " "
   for line in c:
     if re.search(name, line):
       words=line.split()
       names += str(words)
   print(names)
-  #   # else:
-  #   #   print("The name is not in the customer list")  
-  #   #   quit()
-  # print(names)
+        quit()
+  '''getting the total '''
   product = input("Enter the product name")
   quantity = input("Enter the quantity")
   products = ""
@@ -23,14 +20,10 @@ def purchases():
       words=line.split()
       products += str(words) 
       price = words[2]
-      print(int(price))
-      total = price  + int(quantity)
-      print(str(total))
-  print(str(products))    
-    # else:
-    #   print("The item is not in the list")  
-    #   quit()
-
+      total = int(price)  * int(quantity)
+      print(price)
+      print(int(total))
+  # print(products)    
 
  
 
