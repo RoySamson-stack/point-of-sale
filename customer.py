@@ -4,6 +4,11 @@ import uuid
 class Customer:
   def __init__(self):
     self.customer()
+
+
+
+  # def get_name(self, name):
+  #   return self.name  
     
   def customer(self):
         while True:
@@ -27,22 +32,23 @@ class Customer:
       
     #adding the customer to the customer list   
 def all_customers():
-  f = open("customer.txt", "r")
-  file = f.readlines()
+  f = open("customer.txt", "r").readlines()
   
-  for line in file:
+  for line in f:
     print(line)
         
 def add_customer():
   myuuid = uuid.uuid4()
-  name = input("Enter your name")
+  name = input("Enter your name").capitalize()
   address = input("Enter the address")
   phonenumber = input("Enter the phonenumber")
-  order=[]
+  order=""
 #try using the for loop to create an object to the next lines
-  order.extend( [myuuid, name, address, phonenumber])
+  order+=   str(myuuid) +  " -- "+ name + " -- " + address+ " -- "+  phonenumber 
   with open("customer.txt", 'a') as f:
+
     f.write(str(order) + "\n")
+    print(name)
     print("Customer has been added")
   
     
@@ -65,22 +71,21 @@ def update_customer():
   phonenumber = input("Enter the phonenumber update")
   newdata = ""
   order=[]
-  f = open("customer.txt", "r+")
-  file = f.readlines()
-  print(file)
+  f = open("customer.txt", "r+").readlines()
+  print(f)
   order.extend( [new_name, address, phonenumber])
-  for line in file:
+  for line in f:
     if name+"\n" in line:
       #striing the line with the name
       words=line.strip(line)
       #removing the line thta has a match of the name entered
-      file.remove(name+"\n")
+      f.remove(name+"\n")
     if name in line:
-      file.remove(line)
+      f.remove(line)
       #here we append the new data that has been entered and putting it in a list
-      file.append(str(order))
+      f.append(str(order))
   print(file)
-  for name in file:
+  for name in f:
     newdata += name
 #writing the new data to the file
   f = open("customer.txt", "w")
@@ -92,25 +97,24 @@ def delete_customer():
   
   name_a = []
   newdata = ""
-  f = open("customer.txt","r")
-  file = f.readlines()
+  f = open("customer.txt","r").readlines()
   for line in open("customer.txt", 'r'):
       if re.search(name, line):
           ages=line.split()
           name_a.append(ages)
   print(name_a)
   id = input("Enter the id to delete")       
-  for line in file:
+  for line in f:
     if id+"\n" in line:
       #strip the line that has a match with the name theat has been entered
       words=line.strip(line)
       #removing the line completely from the file
-      file.remove(id+"\n")
+      f.remove(id+"\n")
     if name in line:
-      file.remove(line)
+      f.remove(line)
   print("Successfully deleted")    
-  print(file)
-  for id in file:
+  print(f)
+  for id in f:
     newdata += id
 
   f = open("customer.txt", "w")

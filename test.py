@@ -1,30 +1,16 @@
-import re
+# f = open("customer.txt", "r")
+# file = f.readlines()
+ 
+# print ("List : " ,file) 
+ 
+# res = [x for x in range(len(file)) if file[x] == 10] 
+ 
+# print ("Indices at which element 10 is present: " + str(res))
 
-def searchage():
-  name = input("Enter the name you want to search")
-  
-  name_a = []
-  newdata = ""
-  f = open("customer.txt","r")
-  file = f.readlines()
-  for line in open("customer.txt", 'r'):
-      if re.search(name, line):
-          ages=line.split()
-          name_a.append(ages)
-  print(name_a)
-  id = input("Enter the id to delete")       
-  for line in file:
-    if id+"\n" in line:
-      #strip the line that has a match with the name theat has been entered
-      words=line.strip(line)
-      #removing the line completely from the file
-      file.remove(id+"\n")
-    if name in line:
-      file.remove(line)
-  print(file)
-  for id in file:
-    newdata += id
-
-  f = open("customer.txt", "w")
-  f.write(newdata)  
-searchage()   
+for data in open("customer.txt", "r"):
+        d=int(data['name'])
+        if isinstance(d,tuple):
+           if set(d).intersection(some_arr):
+                print(data['id'])
+        if d in some_arr:
+              print(data['id'])

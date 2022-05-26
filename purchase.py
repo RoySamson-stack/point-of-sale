@@ -1,28 +1,40 @@
-from customer import *
-from product import *
+import re
+
+def purchases():
+  c = open("customer.txt", "r").readlines()
+  p = open("products.txt", "r").readlines()
+  name = input("Enter the customer name:").capitalize()
+
+  names = " "
+  for line in c:
+    if re.search(name, line):
+      words=line.split()
+      names += str(words)
+  print(names)
+  #   # else:
+  #   #   print("The name is not in the customer list")  
+  #   #   quit()
+  # print(names)
+  product = input("Enter the product name")
+  quantity = input("Enter the quantity")
+  products = ""
+  for line in p:
+    if re.search(product, line):
+      words=line.split()
+      products += str(words) 
+      price = words[2]
+      print(int(price))
+      total = price  + int(quantity)
+      print(str(total))
+  print(str(products))    
+    # else:
+    #   print("The item is not in the list")  
+    #   quit()
 
 
+ 
 
+   
 
-'''create a purchase wheeby it reads from the customer and pick the name and check is the user is in the customers list
-if not in the list run add_customer function. if in the list, run an input for the user to enter what items they want to purchase and
-also check if the product is in the list. then pick the line of the poroduct and strip the price using index and tunr in it into a integer number
-then multiply it with the quantity or amount the user wants to give the total 
-
-some after thought is then your can take the user address and ohone number by having an optin if the user wants deleivery or not then print the receipt
-having all this information 
-'''
-def purchase():
-  f = open("customer.txt", "r")
-  ft = open("products.txt", "r")
-  f_customer = f.readlines()  
-  ft_product = ft.readlines()
-  
-  #question do we have to take the customer name from user
-  for name in line:
-    if name in line:
-      print("Welcome to purchase")
-      
-      
-      
-purchase()      
+if __name__=="__main__":
+  purchases()

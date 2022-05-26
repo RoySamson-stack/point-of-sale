@@ -17,12 +17,16 @@ class Product:
     while True:
       if option == "1":
         search_item()
+        break
       elif option == "2":
         add_item()
+        break
       elif option == "3":
         update_item()
+        break
       elif option == "4":
-        delete_item()  
+        delete_item() 
+        break 
       elif option == "5":
         quit()      
       else:
@@ -49,9 +53,9 @@ def add_item():
   products = ""
   item = input("Enter the item to add to list")
   price = input("Enter the price")
-  menu.extend([item," -- " ,price])
+  products += item + " -- "+ price
   with open("products.txt", "a") as f:
-    f.write(str(menu))
+    f.write(str(products) + "\n")
     
   #function to update an item in the list        
 def update_item():
