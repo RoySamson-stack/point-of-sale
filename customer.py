@@ -22,12 +22,16 @@ def customer():
 
         if option == 1:
             all_customers()
+            break
         elif option == 2:
             add_customer()
+            break
         elif option == 3:
             update_customer()
+            break
         elif option == 4:
             delete_customer()
+            break
         elif option == 5:
             quit()
         else:  

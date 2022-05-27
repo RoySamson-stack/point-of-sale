@@ -1,4 +1,8 @@
 import re
+from customer import *
+from product import *
+
+
 #add validation and check if name is twice then use the id the get the customer details
 def purchases():
   c = open("customer.txt", "r").readlines()
@@ -27,6 +31,8 @@ def purchases():
       #after getting the total update the file on the stock
       print(price)
       print("Remaining stock" , int(rmn_stock))
+      # products += 
+      #get the whole line and then update the line 
       print("Total" , int(total))
     print(products)
   
