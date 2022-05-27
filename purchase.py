@@ -10,19 +10,18 @@ def purchases():
       words=line.split()
       names += str(words)
   print(names)
-        quit()
   '''getting the total '''
-  product = input("Enter the product name")
+  product = input("Enter the product name").capitalize()
   quantity = input("Enter the quantity")
   products = ""
   for line in p:
     if re.search(product, line):
       words=line.split()
       products += str(words) 
-      price = words[2]
+      price = words[4]
       total = int(price)  * int(quantity)
       print(price)
-      print(int(total))
+      print("Total" , int(total))
   # print(products)    
 
  

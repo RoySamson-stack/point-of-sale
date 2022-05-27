@@ -9,3 +9,5 @@ bdcbaa44-b1d1-4876-a597-05c59084b5c7 -- Tonga -- turkana -- 0783441
 bd28edde-654a-4055-97f6-26798bd0d267 -- Meen -- Nakuru -- 07353354
 c8a15e4b-a991-4513-92f7-1330599d2894 -- Darryl -- Turkana -- 07305
 00e299e7-8c29-4402-a42f-ddcd27a6fdc9 -- Riot -- Kakamega -- 07427204
+Customer62b33acf-65e3-444c-a7ec-3dae7ffcdafb, Nazra,Kisumu,07504535
+Customer4268f386-f4de-4faf-b905-7639491e14af, Darryl,Awendo,0742340234

@@ -1,41 +1,48 @@
 import re
 from product import *
 from customer import *
+import uuid
+
 
 
 class Product:
-  def __init__(self):
-    self.product()
+  def __init__(self,id=None, item=None, price=None):
+    self.id = id
+    self.item = item 
+    self.price= price
     
-  def product(self):
-    #printing the option from which a user picks 
-    print("1. Search item \n2. Add item \n3. Update item \n4. Delete item \n5. Exit ")
-    option = input("Enter the option you want")
-    
-    for line in open("products.txt", "r"):
-      print(str(line))
-    while True:
-      if option == "1":
-        search_item()
-        break
-      elif option == "2":
-        add_item()
-        break
-      elif option == "3":
-        update_item()
-        break
-      elif option == "4":
-        delete_item() 
-        break 
-      elif option == "5":
-        quit()      
-      else:
-        print("Please enter a valid option")
-        product()              
-        
-  #reading the menu and printing it to the terminal for the user to see
+  def __str__(self):
+      return f'{self.id} -- {self.item} -- {self.price}'
 
-   
+def product():
+  #printing the option from which a user picks 
+  print("1. Search item \n2. Add item \n3. Update item \n4. Delete item \n5. Exit ")
+  option = input("Enter the option you want")
+  
+  for line in open("products.txt", "r"):
+    print(str(line))
+  while True:
+    if option == "1":
+      search_item()
+      break
+    elif option == "2":
+      add_item()
+      break
+    elif option == "3":
+      update_item()
+      break
+    elif option == "4":
+      delete_item() 
+      break 
+    elif option == "5":
+      quit()      
+    else:
+      print("Please enter a valid option")
+      product()              
+      
+#reading the menu and printing it to the terminal for the user to see
+
+  
    
    #searching function for a user to input keywords
 def search_item():
@@ -49,11 +56,13 @@ def search_item():
   
   #function to add items to the item list   
 def add_item():
-  myuuid = uuid.uuid4()
+  id = str(uuid.uuid4())
   products = ""
   item = input("Enter the item to add to list")
   price = input("Enter the price")
-  products += item + " -- "+ price
+  product_details = Product(id, item, price)
+  products += str(product_details)
+
   with open("products.txt", "a") as f:
     f.write(str(products) + "\n")
     
@@ -104,5 +113,5 @@ def delete_item():
   
    
 if __name__ == "__main__":
- Product()
+ product()
         

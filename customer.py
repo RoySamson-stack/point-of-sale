@@ -2,33 +2,37 @@ import re
 import uuid
 
 class Customer:
-  def __init__(self):
-    self.customer()
+  def __init__(self,id=None,  name=None, address=None,phonenumber=None):
+    self.id = id
+    self.name = name 
+    self.address = address
+    self.phonenumber = phonenumber
+    # self.customer()
+
+  def __str__(self):
+      return f'{self.id}-- {self.name} -- {self.address} -- {self.phonenumber}'
 
 
+  
+def customer():
+      while True:
+        print("Select a Customer Operation.")
+        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Exit" )
+        option = int(input("Enter your option"))
 
-  # def get_name(self, name):
-  #   return self.name  
-    
-  def customer(self):
-        while True:
-          print("Select a Customer Operation.")
-          print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Exit" )
-          option = int(input("Enter your option"))
-
-          if option == 1:
-              all_customers()
-          elif option == 2:
-              add_customer()
-          elif option == 3:
-              update_customer()
-          elif option == 4:
-              delete_customer()
-          elif option == 5:
-              quit()
-          else:  
-              print("Invalid option")
-              customer()
+        if option == 1:
+            all_customers()
+        elif option == 2:
+            add_customer()
+        elif option == 3:
+            update_customer()
+        elif option == 4:
+            delete_customer()
+        elif option == 5:
+            quit()
+        else:  
+            print("Invalid option")
+            customer()
       
     #adding the customer to the customer list   
 def all_customers():
@@ -38,18 +42,18 @@ def all_customers():
     print(line)
         
 def add_customer():
-  myuuid = uuid.uuid4()
+  id = str(uuid.uuid4())
   name = input("Enter your name").capitalize()
   address = input("Enter the address")
   phonenumber = input("Enter the phonenumber")
+  new_Customer = Customer(id, name, address, phonenumber)
+ 
   order=""
-#try using the for loop to create an object to the next lines
-  order+=   str(myuuid) +  " -- "+ name + " -- " + address+ " -- "+  phonenumber 
+  order += str(new_Customer)
+  #  str(myuuid) +  " -- "+ name + " -- " + address+ " -- "+  phonenumber 
   with open("customer.txt", 'a') as f:
-
     f.write(str(order) + "\n")
-    print(name)
-    print("Customer has been added")
+    print(f"Customer{id} -- {name} been added")
   
     
   #will try to add whereby a specific input field can be updated 
@@ -94,14 +98,13 @@ def update_customer():
 
 def delete_customer():
   name = input("Enter the name you want to search")
-  
-  name_a = []
+  name_a = ""
   newdata = ""
   f = open("customer.txt","r").readlines()
   for line in open("customer.txt", 'r'):
       if re.search(name, line):
-          ages=line.split()
-          name_a.append(ages)
+          names=line.split()
+          name_a += str(names)
   print(name_a)
   id = input("Enter the id to delete")       
   for line in f:
@@ -123,4 +126,4 @@ def delete_customer():
 #upddating the customer in the list
 
 if __name__ == "__main__":
- Customer()
+ customer()

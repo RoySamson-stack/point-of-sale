@@ -5,3 +5,4 @@ Maize flour -- 120
 Soda -- 120 
 baked bread -- 45
 Cakes -- 20
+44ab81e3-be15-49db-bf3b-16434eb98632 -- Toilet paper -- 150
