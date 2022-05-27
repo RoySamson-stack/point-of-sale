@@ -6,3 +6,4 @@ Soda -- 120
 baked bread -- 45
 Cakes -- 20
 44ab81e3-be15-49db-bf3b-16434eb98632 -- Toilet paper -- 150
+2d1b9148-30c9-4d0c-8a87-17430455684f -- Door mat -- 250 -- 50

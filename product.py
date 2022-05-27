@@ -6,13 +6,14 @@ import uuid
 
 
 class Product:
-  def __init__(self,id=None, item=None, price=None):
+  def __init__(self,id=None, item=None, price=None, stock=None):
     self.id = id
     self.item = item 
     self.price= price
+    self.stock =  stock
     
   def __str__(self):
-      return f'{self.id} -- {self.item} -- {self.price}'
+      return f'{self.id} -- {self.item} -- {self.price} -- {self.stock}'
 
 def product():
   #printing the option from which a user picks 
@@ -60,7 +61,8 @@ def add_item():
   products = ""
   item = input("Enter the item to add to list")
   price = input("Enter the price")
-  product_details = Product(id, item, price)
+  stock = input("Enter the stock")
+  product_details = Product(id, item, price, stock)
   products += str(product_details)
 
   with open("products.txt", "a") as f:
@@ -71,6 +73,7 @@ def update_item():
   item=input("Enter the item to search ").strip()
   new_item = input("Enter the item name update ")
   price = input("Enter the price update")
+  stock = input("Enter the Stock update")
   newdata = ""
   order=[]
   f = open("products.txt", "r+")

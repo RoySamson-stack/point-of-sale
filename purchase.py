@@ -11,6 +11,8 @@ def purchases():
       names += str(words)
   print(names)
   '''getting the total '''
+
+  #add stock
   product = input("Enter the product name").capitalize()
   quantity = input("Enter the quantity")
   products = ""
@@ -18,10 +20,16 @@ def purchases():
     if re.search(product, line):
       words=line.split()
       products += str(words) 
-      price = words[4]
+      price = words[5]
+      stock = words[7]
+      rmn_stock = int(stock) - int(quantity) 
       total = int(price)  * int(quantity)
+      #after getting the total update the file on the stock
       print(price)
+      print("Remaining stock" , int(rmn_stock))
       print("Total" , int(total))
+    print(products)
+  
   # print(products)    
 
  
