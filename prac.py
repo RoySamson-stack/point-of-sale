@@ -1,39 +1,27 @@
 
 import re
 #try ny removing the old line and replacing it with the new line 
-file = open("customer.txt", "r+")
-#create a search function then the user tget the id and uses that 
+
+
+file = open("customer.txt", "r+").readlines()
 def update():
   print("1. Name update \n2. Address update \n3. Phonenumber update \n4. Update all \n5. Exit")
   option=int(input("Enter the option you want pt update"))
-  f = open("customer.txt", "r").readlines()
   if option == 1:
-        search=input("Enter the name to search (copy the id)")
-        for line in open("customer.txt", "r"):
-          if re.search(search, line):
-            name_search=line.split()
-            print(name_search)
-        id = input("Paste the id")
+        name = input("Enter the name")
         for line in open("customer.txt", "r+"):
-          if re.search(id, line):
-            old_name = search
-            f = open("customer.txt", "r+")
+          if re.search(name, line):
+            f = open("customer.txt", "r+").readlines()
             words=line.split()
             print(words)
             word = str(words)
             # id = input("Enter the id to delete")                   
             new_name=input("Enter the new name")
-            new_data=word.replace(old_name, new_name)
-            # print(str(new_data))
-            file.writelines(new_data)
-            #searh for the ol name and remove 
-        for line in file:
-          old_name = search
-          if line.__contains__(old_name):
-            newlist = list(line)
-            newline=list.replace(old_name, new_data)
-            # f.remove(words)
-            print(newline) 
+            new_data=word.replace(name, new_name)
+            print(str(new_data))
+            file.write(new_data)
+            
+           
               
   elif option == 2:
         name = input("Enter the name")

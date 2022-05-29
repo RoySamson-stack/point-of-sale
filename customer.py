@@ -48,7 +48,7 @@ def all_customers():
 def add_customer():
   id = str(uuid.uuid4())
   name = input("Enter your name").capitalize()
-  address = input("Enter the address")
+  address = input("Enter the address").capitalize()
   phonenumber = input("Enter the phonenumber")
   new_Customer = Customer(id, name, address, phonenumber)
  

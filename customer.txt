@@ -1,13 +1,13 @@
-b67faabb-234c-4333-aedd-0d93f0efd769 -- Roy -- nairobi -- 073245
-7ed4500d-ddff-4f75-9578-3619452a5bad -- Roy -- nakuru -- 9723471
-fa5d8274-1875-42db-8593-40b33c8e1c0d -- Rick -- isiolo -- 9439u3rr
-bdcbaa44-b1d1-4876-a597-05c59084b5c7 -- Tonga -- turkana -- 0783441
-2a4281c3-36b9-4854-8cba-c3007964e3d7 -- Maureen -- kikuyu -- 0834434242
+9e1-c18cc2c36f2f -- Kenneth -- Lamu -- 08784543
+2a4281c3-36b9-4854-8cba-c3007964e3d7 -- Maureen -- Kikuyu -- 0834434242
 2dc7c121-8f17-4750-9af8-f6ecce216937 -- Belice -- Ngong -- 07962492
 38db37d0-d7b8-44f8-9ec9-e8d19e895e5b -- Peterson -- Naivasha -- 088688
-24da5486-786f-4bea-89e1-c18cc2c36f2f -- Kenneth -- Lamu -- 08784543
+7ed4500d-ddff-4f75-9578-3619452a5bad -- Roy -- Nakuru -- 9723471
+4268f386-f4de-4faf-b905-7639491e14af -- Darryl -- Awendo -- 0742340234
+62b33acf-65e3-444c-a7ec-3dae7ffcdafb -- Nazra -- Kisumu -- 07504535
+b67faabb-234c-4333-aedd-0d93f0efd769 -- Roy -- Nairobi -- 073245
 bd28edde-654a-4055-97f6-26798bd0d267 -- Meen -- Nakuru -- 07353354
+bdcbaa44-b1d1-4876-a597-05c59084b5c7 -- Tonga -- Turkana -- 0783441
 c8a15e4b-a991-4513-92f7-1330599d2894 -- Darryl -- Turkana -- 07305
-00e299e7-8c29-4402-a42f-ddcd27a6fdc9 -- Riot -- Kakamega -- 07427204
-Customer62b33acf-65e3-444c-a7ec-3dae7ffcdafb, Nazra,Kisumu,07504535
-Customer4268f386-f4de-4faf-b905-7639491e14af, Darryl,Awendo,0742340234
+fa5d8274-1875-42db-8593-40b33c8e1c0d -- Rick -- Isiolo -- 9439u3rr
+['fa5d8274-1875-42db-8593-40b33c8e1c0d', '--', 'Ricko', '--', 'Isiolo', '--', '9439u3rr']
