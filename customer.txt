@@ -9,4 +9,4 @@ b67faabb-234c-4333-aedd-0d93f0efd769 -- Roy -- Nairobi -- 073245
 bd28edde-654a-4055-97f6-26798bd0d267 -- Meen -- Nakuru -- 07353354
 bdcbaa44-b1d1-4876-a597-05c59084b5c7 -- Tonga -- Turkana -- 0783441
 c8a15e4b-a991-4513-92f7-1330599d2894 -- Darryl -- Turkana -- 07305
-fa5d8274-1875-42db-8593-40b33c8e1c0d -- Rick -- Isiolo -- 9439u3rr
+c8a15e4b-a991-4513-92f7-1330599d2894 -- Rick -- Isiolo -- 07305971

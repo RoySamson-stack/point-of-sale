@@ -132,10 +132,20 @@ def update_customer():
                 f.writelines(new_info)
   elif option == 4:
           name=input("Enter the name to search ").strip()
+          for line in open("customer.txt", "r+"):
+            if re.search(name, line):
+              words=line.split()
+              print(words)
+          id=input("Enter the id to search ").strip()
+          for line in open("customer.txt", "r+"):
+            if re.search(id, line):
+              words=line.split()
+              print(words)
           new_name = input("Enter the name update to update ")
           address = input("Enter the address update")
           phonenumber = input("Enter the phonenumber update")
           newdata = ""
+          # file = open("customer.txt", "r+")
           order=[]
           f = open("customer.txt", "r+").readlines()
           print(f)
@@ -150,9 +160,9 @@ def update_customer():
               f.remove(line)
               #here we append the new data that has been entered and putting it in a list
               f.append(str(order))
-          print(file)
+          print(f)
           for name in f:
-            newdata += name
+            newdata += Customer(id, new_name, address, phonenumber)
         #writing the new data to the file
           f = open("customer.txt", "w")
           f.write(newdata)     

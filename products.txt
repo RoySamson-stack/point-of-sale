@@ -1,9 +1,6 @@
-Milk -- 45
-Eggs  -- 15
-Wheat flour -- 130
-Maize flour -- 120
-Soda -- 120 
-baked bread -- 45
-Cakes -- 20
-44ab81e3-be15-49db-bf3b-16434eb98632 -- Toilet paper -- 150
-2d1b9148-30c9-4d0c-8a87-17430455684f -- Door mat -- 250 -- 50
+44ab81e3-be15-49db-bf3b-16434eb98632 -- Toiletpaper -- 150
+2d1b9148-30c9-4d0c-8a87-17430455684f -- Doormat -- 250 -- 50
+9e1a547c-ab50-4f93-90fd-f2c489b51379 -- Milk -- 50 -- 50
+707ef016-fdc8-478d-ada1-ba18abef25e3 -- Eggs  -- 15 -- 100
+26499bf6-f44f-4e0b-973c-b5826521684a -- Wheatflour -- 130 -- 200
+66c36709-26e0-492c-8d91-14f920c5f6f3 -- Soda  -- 120 -- 100

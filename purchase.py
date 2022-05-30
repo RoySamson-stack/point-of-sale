@@ -20,12 +20,13 @@ def purchases():
   product = input("Enter the product name").capitalize()
   quantity = input("Enter the quantity")
   products = ""
+  order=""
   for line in p:
     if re.search(product, line):
       words=line.split()
       products += str(words) 
-      price = words[5]
-      stock = words[7]
+      price = words[4]
+      stock = words[6]
       rmn_stock = int(stock) - int(quantity) 
       total = int(price)  * int(quantity)
       #after getting the total update the file on the stock
@@ -34,9 +35,10 @@ def purchases():
       # products += 
       #get the whole line and then update the line 
       print("Total" , int(total))
-    print(products)
-  
-  # print(products)    
+    # print(products)
+  order += name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total)
+  file = open("purchases.txt", "a")
+  file.write(order)    
 
  
 
