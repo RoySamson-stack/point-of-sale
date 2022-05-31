@@ -46,7 +46,7 @@ def all_items():
   file = open("products.txt", "a")
   for line in f:
     print(line)
-    PRODUCTS.append(line)  
+    PRODUCTS.update({line})  
    #searching function for a user to input keywords
 def search_item():
   items=input("Enter the item to search") 
@@ -60,15 +60,14 @@ def search_item():
   #function to add items to the item list   
 def add_item():
   id = str(uuid.uuid4())
-  products = ""
   item = input("Enter the item to add to list")
   price = input("Enter the price")
   stock = input("Enter the stock")
   product_details = Product(id, item, price, stock)
-  products += str(product_details)
+  PRODUCTS.append(str(product_details))
 
   with open("products.txt", "a") as f:
-    f.write(str(products) + "\n")
+    f.write(str(PRODUCTS) + "\n")
     
   #function to update an item in the list        
 def update_item():

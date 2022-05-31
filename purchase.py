@@ -48,7 +48,7 @@ def purchases():
       #get the whole line and then update the line 
       print("Total" , int(total))
     # print(products)
-  order += name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total) 
+  order += name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total)
   file = open("purchases.txt", "a")
   file.write(str(order) + "\n")    
 
