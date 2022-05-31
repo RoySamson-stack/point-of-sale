@@ -3,6 +3,18 @@ from customer import *
 from product import *
 
 
+# option = input("Enter the option")
+
+# def search_item():
+#   items=input("Enter the product item") 
+#   menu=[]
+#   for line in open("products.txt", "r"):
+#     if line.find(items):
+#       words=line.split()
+#       menu.append(words)            
+#   print(words) 
+  
+  
 #add validation and check if name is twice then use the id the get the customer details
 def purchases():
   c = open("customer.txt", "r").readlines()
@@ -36,9 +48,9 @@ def purchases():
       #get the whole line and then update the line 
       print("Total" , int(total))
     # print(products)
-  order += name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total)
+  order += name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total) 
   file = open("purchases.txt", "a")
-  file.write(order)    
+  file.write(str(order) + "\n")    
 
  
 

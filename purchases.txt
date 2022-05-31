@@ -1,1 +1,4 @@
-RickProducts:MilkQuantity: 3Total: 150
+Meen Products: Wheatflour Quantity: 5 Total: 650
+
+Nazra Products: Milk Quantity: 12 Total: 600
+

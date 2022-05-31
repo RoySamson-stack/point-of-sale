@@ -4,7 +4,7 @@ from customer import *
 import uuid
 
 
-
+PRODUCTS=[]
 class Product:
   def __init__(self,id=None, item=None, price=None, stock=None):
     self.id = id
@@ -40,17 +40,19 @@ def product():
     else:
       print("Please enter a valid option")
       product()              
-      
-#reading the menu and printing it to the terminal for the user to see
-
-  
-   
+        
+def all_items():
+  f = open("products.txt", "r").readlines()
+  file = open("products.txt", "a")
+  for line in f:
+    print(line)
+    PRODUCTS.append(line)  
    #searching function for a user to input keywords
 def search_item():
-  items=input("Enter the product item") 
+  items=input("Enter the item to search") 
   menu=[]
   for line in open("products.txt", "r"):
-    if line.find(items):
+    if re.search(items, line):
       words=line.split()
       menu.append(words)            
   print(words)  

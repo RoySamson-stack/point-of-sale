@@ -1,5 +1,9 @@
 import re
 import uuid
+import fileinput
+
+
+CUSTOMERS=[]
 
 class Customer:
   def __init__(self,id=None,  name=None, address=None,phonenumber=None):
@@ -41,9 +45,19 @@ def customer():
     #adding the customer to the customer list   
 def all_customers():
   f = open("customer.txt", "r").readlines()
-  
+  file = open("customer.txt", "a")
   for line in f:
     print(line)
+    CUSTOMERS.append(line)
+    
+def search_customer():
+  name=input("Enter the customer name to search") 
+  names=[]
+  for line in open("customer.txt", "r"):
+    if re.search(name, line):
+      words=line.split()
+      names.append(words)            
+  print(words)   
         
 def add_customer():
   id = str(uuid.uuid4())
@@ -66,6 +80,7 @@ def update_customer():
   print("1. Name update \n2. Address update \n3. Phonenumber update \n4. Update all \n5. Exit")
   option=int(input("Enter the option you want pt update"))
   f = open("customer.txt", "r").readlines()
+  file = open("customer.txt", "a")
   if option == 1:
         search=input("Enter the name to search (copy the id)")
         for line in open("customer.txt", "r"):
@@ -80,19 +95,27 @@ def update_customer():
             words=line.split()
             print(words)
             word = str(words)
-            # id = input("Enter the id to delete")                   
             new_name=input("Enter the new name")
+            new_data  = name_search.remove(name_search[2])
+            name_search[2] = new_name
             new_data=word.replace(old_name, new_name)
-            # print(str(new_data))
+            print(str(new_data))
+            # file.remove(name_search)
             file.writelines(new_data)
             #search for the line name and remove 
-        for line in file:
-          old_name = search
-          if line.__contains__(old_name):
-            newlist = list(line)
-            newline=list.replace(old_name, new_data)
-            # f.remove(words)
-            print(newline) 
+            file = open("customer.txt", "r")
+            replacement = ""
+            # using the for loop
+            for line in file:
+                line = line.strip()
+                changes = line.replace(str(name_search), str(new_data))
+                replacement = replacement + changes + "\n"
+
+            file.close()
+            # opening the file in write mode
+            fout = open("customer.txt", "a")
+            fout.write(replacement)
+            fout.close
               
   elif option == 2:
         f = open("customer.txt", "r+")
@@ -198,6 +221,9 @@ def delete_customer():
   f = open("customer.txt", "w")
   f.write(newdata)
   
+  
+
+
 #upddating the customer in the list
 
 if __name__ == "__main__":
