@@ -27,7 +27,12 @@ def purchases():
       names += str(words)
   print(names)
   '''getting the total '''
-
+  id=input("Paste the customer id")
+  matches=""
+  for line in c:
+    if id+"\n" in line:
+      words=line.strip(line)
+      print(words)
   #add stock
   product = input("Enter the product name").capitalize()
   quantity = input("Enter the quantity")
@@ -47,8 +52,8 @@ def purchases():
       # products += 
       #get the whole line and then update the line 
       print("Total" , int(total))
-    # print(products)
-  order += name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total)
+    # print(products)\
+  order += id + " " + " Customer name: " + name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total)
   file = open("purchases.txt", "a")
   file.write(str(order) + "\n")    
 
