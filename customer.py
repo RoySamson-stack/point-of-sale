@@ -112,10 +112,6 @@ def update_customer():
                 replacement = replacement + changes + "\n"
 
             file.close()
-            # opening the file in write mode
-            fout = open("customer.txt", "a")
-            fout.write(replacement)
-            fout.close
               
   elif option == 2:
         f = open("customer.txt", "r+")
