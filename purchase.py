@@ -1,16 +1,19 @@
 import re
 from customer import *
 from product import *
+'''Add for adding new customers if not in the customer list also for the products'''
 
-print("1. Search purchases \n2. Purchase operations")
+print("1. Search purchases \n2. Purchase operations \n3. Exit")
 option = int(input("Enter an option from the above"))
 
 def main_purchases():
   if option == 1:
     search_purchases()
   elif option == 2:
-    purchases() 
-     
+    make_purchases() 
+  elif option == 3:
+    quit()
+       
 def search_purchases():
   id = input("Enter the purchase id") 
   order=[]
@@ -19,9 +22,9 @@ def search_purchases():
       words=line.split()
       order.append(words)        
   print(words)   
+  
 #add validation and check if name is twice then use the id the get the customer details
-
-def purchases():
+def make_purchases():
   c = open("customer.txt", "r").readlines()
   p = open("products.txt", "r").readlines()
   name = input("Enter the customer name:").capitalize()
@@ -38,8 +41,7 @@ def purchases():
     if id+"\n" in line:
       words=line.strip(line)
       print(words)
-  #add stock
-  products = list()
+  #check if the customer order is above the quantity that is there
   product = input("Enter the product name").capitalize()
   quantity = str(input("Enter the quantity"))
   order=""
@@ -47,6 +49,8 @@ def purchases():
   for line in p:
     if re.search(product, line):
       words=line.split()
+      order += str(words)
+      print(order)    
       # for items in range(1, 100):
       #   products.append(input(f'Enter the item {items}:'))
       price = words[4]
