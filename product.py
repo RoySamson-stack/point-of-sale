@@ -46,7 +46,7 @@ def all_items():
   file = open("products.txt", "a")
   for line in f:
     print(line)
-    PRODUCTS.update({line})  
+    PRODUCTS.append(line)  
    #searching function for a user to input keywords
 def search_item():
   items=input("Enter the item to search") 
