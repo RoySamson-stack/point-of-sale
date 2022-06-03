@@ -56,7 +56,7 @@ def search_customer():
   for line in open("customer.txt", "r"):
     if re.search(name, line):
       words=line.split()
-      names.append(words)            
+      names.append(words)        
   print(words)   
         
 def add_customer():

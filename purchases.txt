@@ -1,5 +1,3 @@
-Meen Products: Wheatflour Quantity: 5 Total: 650
-
-Nazra Products: Milk Quantity: 12 Total: 600
-
 7ed4500d-ddff-4f75-9578-3619452a5bad Customer name:Roy  Products: Milk Quantity: 6 Total: 300
+bdcbaa44-b1d1-4876-a597-05c59084b5c7  Customer name: Tonga Products: Soda Quantity: 3 Total: 360
+2a4281c3-36b9-4854-8cba-c3007964e3d7  Customer name: Maureen Products: Eggs Quantity: 4 Total: 60
