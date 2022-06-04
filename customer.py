@@ -1,10 +1,16 @@
 import re
 import uuid
 import fileinput
+import random
+import string
 
 
 CUSTOMERS=[]
-
+  
+random = ''.join([random.choice(string.ascii_letters
+            + string.digits) for n in range(4)])
+  
+  
 class Customer:
   def __init__(self,id=None,  name=None, address=None,phonenumber=None):
     self.id = id
@@ -19,9 +25,10 @@ class Customer:
 
   
 def customer():
+  
       while True:
         print("Select a Customer Operation.")
-        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Exit" )
+        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Search customer \n6. Main menu" )
         option = int(input("Enter your option"))
 
         if option == 1:
@@ -37,7 +44,9 @@ def customer():
             delete_customer()
             break
         elif option == 5:
-            quit()
+            search_customer()
+        elif option == 6:
+            shop()    
         else:  
             print("Invalid option")
             customer()
@@ -60,7 +69,10 @@ def search_customer():
   print(words)   
         
 def add_customer():
-  id = str(uuid.uuid4())
+
+ 
+  # print (random)
+  id = random
   name = input("Enter your name").capitalize()
   address = input("Enter the address").capitalize()
   phonenumber = input("Enter the phonenumber")
@@ -80,7 +92,7 @@ def update_customer():
   print("1. Name update \n2. Address update \n3. Phonenumber update \n4. Update all \n5. Exit")
   option=int(input("Enter the option you want pt update"))
   f = open("customer.txt", "r").readlines()
-  file = open("customer.txt", "a")
+  file = open("customer.txt", "w")
   if option == 1:
         search=input("Enter the name to search (copy the id)")
         for line in open("customer.txt", "r"):
@@ -104,14 +116,10 @@ def update_customer():
             file.writelines(new_data)
             #search for the line name and remove 
             file = open("customer.txt", "r")
-            replacement = ""
-            # using the for loop
+            lines = file.readlines()
             for line in file:
-                line = line.strip()
-                changes = line.replace(str(name_search), str(new_data))
-                replacement = replacement + changes + "\n"
-
-            file.close()
+              if line.match(name_search):
+                line.strip()
               
   elif option == 2:
         f = open("customer.txt", "r+")

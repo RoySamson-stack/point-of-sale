@@ -1,1 +1,3 @@
 bdcbaa44-b1d1-4876-a597-05c59084b5c7  Customer name: Tonga  Products: Milk Quantity: 5 Total: 250
+['9e1a547c-ab50-4f93-90fd-f2c489b51379', '--', 'Milk', '--', '50', '--', '50']9e1-c18cc2c36f2f  Customer name: Kenneth Products: Milk Quantity: 5 Total: 250
+['707ef016-fdc8-478d-ada1-ba18abef25e3', '--', 'Eggs', '--', '15', '--', '100']9e1-c18cc2c36f2f  Customer name: Kenneth Products: Eggs Quantity: 90 Total: 1350
