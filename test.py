@@ -1,540 +1,89 @@
-import os
-import customer,product
 import re
+from customer import *
+from product import *
 
-PRODUCTS = []
-CUSTOMERS = []
-PURCHASES = []
-# purchases class
-class Purchase:
+print("1. Search purchases \n2. Purchase operations \n3. Exit")
+option = int(input("Enter an option from the above"))
 
-    def __init__(self,cus_name,p_id,quantity,total):
-         # Run validations to the received arguments
-        assert purchase_q >=0, f"{purchase_q} is not greater or equal to zero!! "
-
-        self.cus_name = cus_name
-        self.p_id = p_id
-        self.quantity = quantity
-        self.total = total
-    
-    # magic method repr for representing objects
-    def __repr__(self):
-        return f"('{self.cus_name}','{self.p_id}','{self.quantity}','{self.total}')"
-# purchase menu
-
-def purchase_menu():
-    
-
-    # creating options  
-    while True:
-        print("""
-        Purchases Menu
-        1. Make a purchase
-        2. List all purchases
-        3. Search for a purchase
-        4. Quit
-        """)  
-        choice4 = int(input("Select Purchase option:"))  
-
-        # choice 1
-        if choice4 == 1:
-            print()
-            make_purchase()
-            
-        elif choice4 == 2:
-            print()
-            list_purchases()
-        elif choice4 == 3:
-            print()
-            search_purchase()
-        elif choice4 == 4:
-            print()
-            break
-        else:
-            print()
-            print('Oops! Incorrect choice. Please try again! ')
-
-
-# required functions
-
-# function to make purchase 
-def make_purchase():
-    customer.all_customers()
-    product.all_items()
-    # enter customer id 
-    customer_exists = False
-    product_exists = False
-    id = input("Enter customer id to purchase: ")
-    # check if the customer id exists
-    for line in open("customer.txt", "r"):
-        if re.match(id, line):
-            customer_exists = True
-            cus_name = line.split()
-            name = cus_name[2]
-            print("Customer name is:  " , name)
-            break
-            # print("Customer exists")
-
-    
-    # check if product exists
-    p_id = input("Enter product id to purchase: ") 
-    for line in open("products.txt", "r"):
-        if re.match(p_id, line):
-            products = line.split()
-            product_exists = True
-            print(products)
-    #         # print("Product exists")
-      
-    if customer_exists and product_exists:
-        # make purchase
-        quantity = int(input("Enter quantity of product to purchase: "))
-        # check if amount is available
-        for i in range(len(product.PRODUCTS)):
-            if p_id == products[0]:
-                name = products[2]
-                stock = int(products[6])
-                if stock >= quantity:
-                    # update product amount
-                    balance = stock - quantity
-                    # print("Product available")
-                    price = float(products[4])
-                    total = price * quantity
-                    output = Purchase(name,p_id, stock,total)
-                    PURCHASES.append(output)
-                    print("Purchase successfull!!!")
-                    print()
-                    print(PURCHASES)
-                    # update_products()
-                    while True:
-                        print ("""
-                        Choose purchase option:
-                        1. Make another purchase
-                        2. Checkout
-                        3.Exit
-                        """)
-                        choice7 = int(input("Choose a purchase option: "))
-                        if choice7 ==1:import os
-import customer,product
-import re
-
-PRODUCTS = []
-CUSTOMERS = []
-PURCHASES = []
-# purchases class
-class Purchase:
-
-    def __init__(self,name,p_id,quantity,total):
-
-        self.name = name
-        self.p_id = p_id
-        self.quantity = quantity
-        self.total = total
-    
-    # magic method repr for representing objects
-    def __repr__(self):
-        return f"('{self.name}','{self.pro_id}','{self.purchase_q}','{self.price_purchased}')"
-# purchase menu
-
-def purchase_menu():
-    
-
-    # creating options  
-    while True:
-        print("""
-        Purchases Menu
-        1. Make a purchase
-        2. List all purchases
-        3. Search for a purchase
-        4. Quit
-        """)  
-        choice4 = int(input("Select Purchase option:"))  
-
-        # choice 1
-        if choice4 == 1:
-            print()
-            make_purchase()
-            
-        elif choice4 == 2:
-            print()
-            list_purchases()
-        elif choice4 == 3:
-            print()
-            search_purchase()
-        elif choice4 == 4:
-            print()
-            break
-        else:
-            print()
-            print('Oops! Incorrect choice. Please try again! ')
-
-
-# required functions
-
-# function to make purchase 
-def make_purchase():
-    customer.all_customers()
-    product.all_items()
-    # enter customer id 
-    customer_exists = False
-    product_exists = False
-    id = input("Enter customer id to purchase: ")
-    # check if the customer id exists
-    for line in open("customer.txt", "r"):
-        if re.match(id, line):
-            customer_exists = True
-            name = line.split()
-            name = name[2]
-            print("Customer name is:  " , name)
-            break
-            # print("Customer exists")
-
-    
-    # check if product exists
-    p_id = input("Enter product id to purchase: ") 
-    for line in open("products.txt", "r"):
-        if re.match(p_id, line):
-            products = line.split()
-            product_exists = True
-            print(products)
-    #         # print("Product exists")
-      
-    if customer_exists and product_exists:
-        # make purchase
-        quantity = int(input("Enter quantity of product to purchase: "))
-        # check if amount is available
-        for i in range(len(product.PRODUCTS)):
-            if p_id == products[0]:
-                name = products[2]
-                stock = int(products[6])
-                if stock >= quantity:
-                    # update product amount
-                    balance = stock - quantity
-                    # print("Product available")
-                    price = float(products[4])
-                    total = price * quantity
-                    output = Purchase(name,p_id, stock,total)
-                    PURCHASES.append(output)
-                    print("Purchase successfull!!!")
-                    print()
-                    print(PURCHASES)
-                    # update_products()
-                    while True:
-                        print ("""
-                        Choose purchase option:
-                        1. Make another purchase
-                        2. Checkout
-                        3.Exit
-                        """)
-                        choice7 = int(input("Choose a purchase option: "))
-                        if choice7 ==1:
-                            make_purchase()
-                        elif choice7 ==2:
-                            checkout()
-                            break
-                        elif choice7 ==3:
-                            print()
-                            break
-                        else:
-                            print("Invalid option!!!")
-                        
-                # else:
-                #     print("Quantity in stock is below " +str(quantity) + ' : ' +"quantity available:"+ str(stock) )
-                #     make_purchase()
-                #     break
+def main_purchases():
+  if option == 1:
+    search_purchases()
+  elif option == 2:
+    make_purchases() 
+  elif option == 3:
+    quit()
+       
+def search_purchases():
+  id = input("Enter the purchase id") 
+  order=[]
+  for line in open("purchases.txt", "r"):
+    if re.search(id, line):
+      words=line.split()
+      order.append(words)        
+  print(words)   
   
-    else:
-        print("Invalid details!!!")
-        
-        
-
-def handle_file():
-    with open('purchase.txt','a')as fo:
-        for p in PURCHASES:
-            print(p.name+','+p.p_id+','+str(p.quantity)+','+str(p.total),file=fo)
-            # break            
-
-def checkout():
-    total_purchase = 0
-    for p in PURCHASES:
-        # pur = p.split(',')
-        cost = float(p.total)
-        total_purchase += cost
-    print()
-    print("Total: "+ str(total_purchase))
-    print("purchase complete")
-    update_products()
-    handle_file()
-
-
-def update_products():
-    for p in PURCHASES:
-        # pur = p.split(',')
-        product_id = p.p_id
-        product_quantity = int(p.quantity)
-        # print("quantity: "+ str(quantity))
-        # open products file
-        file = open('products.txt','r')
-        temp = open('temp.txt','w')
-        s = ' '
-        while(s):
-            s = file.readline()
-            L = s.split(',')
-            if len(s)>0:
-                if (L[0]) == product_id:
-                    name = L[1]
-                    quantity = int(L[2])
-                    price = L[3]
-                    updated_q = quantity - p_quantity
-                    temp.write(str(product_id)+','+ name+','+str(updated_q)+','+str(price))
-                else:
-                    temp.write(s)
-        temp.close()
-        file.close()
-        os.remove('products.txt')
-        os.rename('temp.txt','products.txt')
-        print("Inventory updated")
-        print("Stock remaining for " + name + ':' +str(updated_q))
-                    
-# function to list all purchases
-def list_purchases():
-    purchases = []
-    purchases_list = []
-    with open('purchases.txt','r') as f:
-        for line in f.readlines():
-            purchases.append(line)
-     # remove \n
-    for p in purchases:
-        lists = p.replace('\n','')
-        purchases_list.append(lists)
-    print(purchases_list)
+#add validation and check if name is twice then use the id the get the customer details
+def make_purchases():
+  c = open("customer.txt", "r").readlines()
+  p = open("products.txt", "r").readlines()
+  name = input("Enter the customer name:").capitalize()
+  names = " "
+  for line in c:
+    if re.search(name, line):
+      words=line.split()
+      names += str(words)
+  print(names)
+  '''getting the total '''
+  id=input("Paste the customer id")
+  matches=""
+  for line in c:
+    if id+"\n" in line:
+      words=line.strip(line)
+      print(words)
+  items = list()
+  amounts = list()    
+  for x in range(1, 20):
+      items.append(input(f"Enter the product name {x}:").capitalize())
+      amounts.append(input(f"Enter the amount {x}: "))
+      if items == "":
+          break
+  #check if the customer order is above the
+#   product = input("Enter the product name").capitalize()
+#   quantity = str(input("Enter the quantity"))
+  order=""
+  receipt = ""
+  for line in p:
+    if re.search(product, line):
+      words=line.split()
+      order += str(words)
+      # print(order)    
+      price = words[4]
+      stock = words[6]
+      if int(stock) >= int(quantity):
+        print(order)
+        rmn_stock = int(stock) - int(quantity) 
+        total = int(price)  * int(quantity)
+        print("Purchase successful")
+          #after getting the total update the file on the stock
+        print(price)
+        print("Remaining stock" , int(rmn_stock))
+        # products += 
+        #get the whole line and then update the line 
+        print("Total" , int(total))
+      # print(products)\
+        receipt += ("**Receipt**" + "\n" +  "*Items*" + "\n" + product + " = " + str(quantity) + "\n" + "Total:" + str(total) + "\n")
+        print(receipt)
+      elif stock <= quantity:
+        print("The order cannot be completed quantity is too high")  
+        make_purchases()
     
-# function to search for a purchase with customer id or product id
-def search_purchase():
-    total = 0
-    items_bought = 0
-    # menu for search options
-    while True:
-        print("""
-        
-        Search options:
-        1. Search by customer name
-        2. Search by product id
-        3. Exit
-        """)
-        choice5 = int(input("Select search option:")) 
-        if choice5 ==1:
-            fo = open('purchases.txt','r')
-            name = input("Please enter customer name to search: ").capitalize()
-            s = ' '
-            while(s):
-                s = fo.readline()
-                L = s.split(',')
-                if len(s)>0:
-                    if (L[0]) == name:
-                        # print(L)
-                        p_id = L[1]
-                        quantity = L[2]
-                        price = float(L[3])
-                        print( )
-                        # Calculate total spend by customer
-                        total += price
-                        print("customer name: ",name)
-                        print("Product id: ",p_id)
-                        print("Quantity purchased: ",quantity)
-                        print("Price: ",price)
+  order += id + " " + " Customer name: " + name + " Products: " + product + " Quantity: " + str(quantity) + " Total: " + str(total)
+  file = open("purchases.txt", "a")
+  file.write(str(order) + "\n")    
 
+ 
 
-                        # print(name ,pro_id,quantity,price)
-            print('----------------')
-            print("Total spent by " + name + ' : ' + str(total))
-            break
-                
-    
-        elif choice5 ==2:
-            fo = open('purchases.txt','r')
-            id = input("Please enter product id to search: ")
-            s = ' '
-            while(s):
-                s = fo.readline()
-                L = s.split(',')
-                if len(s)>0:
-                    if (L[1]) == id:
-                        # print(L)
-                        name = L[0]
-                        quantity = int(L[2])
-                        price = float(L[3])
-                        print( )
-                        # Calculate total spent on the product
-                        total += price          
-                        # items bought
-                        items_bought += quantity
-                        print("customer name: ",name)
-                        print("product id: ",id)
-                        print("Quantity purchased: ",quantity)
-                        print("Price: ",price)
+   
 
-                        # print(name ,id,quantity,price)
-             
-            print('----------------')
-            print("Total: " + str(total))
-            print("No of products purchased:" + str(items_bought))
-
-            
-            
-        elif choice5 == 3:
-            print()
-            break
-        else:
-            print()
-            print('Oops! Incorrect choice. Please try again! ')
-
-
-         
-        
-        
-
-def handle_file():
-    with open('purchase.txt','a')as fo:
-        for p in PURCHASES:
-            print(p.name+','+p.p_id+','+str(p.quantity)+','+str(p.total),file=fo)
-            # break            
-
-def checkout():
-    total_purchase = 0
-    for p in PURCHASES:
-        # pur = p.split(',')
-        cost = float(p.total)
-        total_purchase += cost
-    print()
-    print("Total: "+ str(total_purchase))
-    print("purchase complete")
-    update_products()
-    handle_file()
-
-
-def update_products():
-    for p in PURCHASES:
-        # pur = p.split(',')
-        product_id = p.p_id
-        product_quantity = int(p.quantity)
-        # print("quantity: "+ str(quantity))
-        # open products file
-        file = open('products.txt','r')
-        temp = open('temp.txt','w')
-        s = ' '
-        while(s):
-            s = file.readline()
-            L = s.split(',')
-            if len(s)>0:
-                if (L[0]) == product_id:
-                    name = L[1]
-                    quantity = int(L[2])
-                    price = L[3]
-                    updated_q = quantity - p_quantity
-                    temp.write(str(product_id)+','+ name+','+str(updated_q)+','+str(price))
-                else:
-                    temp.write(s)
-        temp.close()
-        file.close()
-        os.remove('products.txt')
-        os.rename('temp.txt','products.txt')
-        print("Inventory updated")
-        print("Stock remaining for " + name + ':' +str(updated_q))
-                    
-# function to list all purchases
-def list_purchases():
-    purchases = []
-    purchases_list = []
-    with open('purchases.txt','r') as f:
-        for line in f.readlines():
-            purchases.append(line)
-     # remove \n
-    for p in purchases:
-        lists = p.replace('\n','')
-        purchases_list.append(lists)
-    print(purchases_list)
-    
-# function to search for a purchase with customer id or product id
-def search_purchase():
-    total = 0
-    items_bought = 0
-    # menu for search options
-    while True:
-        print("""
-        
-        Search options:
-        1. Search by customer name
-        2. Search by product id
-        3. Exit
-        """)
-        choice5 = int(input("Select search option:")) 
-        if choice5 ==1:
-            fo = open('purchases.txt','r')
-            cus_name = input("Please enter customer name to search: ").capitalize()
-            s = ' '
-            while(s):
-                s = fo.readline()
-                L = s.split(',')
-                if len(s)>0:
-                    if (L[0]) == cus_name:
-                        # print(L)
-                        p_id = L[1]
-                        quantity = L[2]
-                        price = float(L[3])
-                        print( )
-                        # Calculate total spend by customer
-                        total += price
-                        print("customer name: ",cus_name)
-                        print("Product id: ",p_id)
-                        print("Quantity purchased: ",quantity)
-                        print("Price: ",price)
-
-
-                        # print(cus_name ,pro_id,quantity,price)
-            print('----------------')
-            print("Total spent by " + cus_name + ' : ' + str(total))
-            break
-                
-    
-        elif choice5 ==2:
-            fo = open('purchases.txt','r')
-            id = input("Please enter product id to search: ")
-            s = ' '
-            while(s):
-                s = fo.readline()
-                L = s.split(',')
-                if len(s)>0:
-                    if (L[1]) == id:
-                        # print(L)
-                        cus_name = L[0]
-                        quantity = int(L[2])
-                        price = float(L[3])
-                        print( )
-                        # Calculate total spent on the product
-                        total += price          
-                        # items bought
-                        items_bought += quantity
-                        print("customer name: ",cus_name)
-                        print("product id: ",id)
-                        print("Quantity purchased: ",quantity)
-                        print("Price: ",price)
-
-                        # print(cus_name ,id,quantity,price)
-             
-            print('----------------')
-            print("Total spent: " + str(total))
-            print()
-            print("No of products purchased:" + str(items_bought))
-
-            
-            
-        elif choice5 == 3:
-            print()
-            break
-        else:
-            print()
-            print('Oops! Incorrect choice. Please try again! ')
-
-
-if __name__ == "__main__":
-  purchase_menu()
+if __name__=="__main__":
+  main_purchases()

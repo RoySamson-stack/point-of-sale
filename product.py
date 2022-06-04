@@ -2,8 +2,12 @@ import re
 from product import *
 from customer import *
 import uuid
+import random 
+import string
 
-
+random = ''.join([random.choice(string.ascii_letters
+            + string.digits) for n in range(4)])
+  
 PRODUCTS=[]
 class Product:
   def __init__(self,id=None, item=None, price=None, stock=None):
@@ -59,15 +63,19 @@ def search_item():
   
   #function to add items to the item list   
 def add_item():
-  id = str(uuid.uuid4())
+  order = ""
+  id = random
   item = input("Enter the item to add to list")
   price = input("Enter the price")
   stock = input("Enter the stock")
+  print(item, "added to list ")
   product_details = Product(id, item, price, stock)
+  order += str(product_details)
+  
   PRODUCTS.append(str(product_details))
 
   with open("products.txt", "a") as f:
-    f.write(str(PRODUCTS) + "\n")
+    f.write(str(order) + "\n")
     
   #function to update an item in the list        
 def update_item():
@@ -108,6 +116,7 @@ def delete_item():
       if item in line:
         file.remove(line)
   print(file)
+  print(item, "has been deleted from list")
   for item in file:
       newdata += item
 

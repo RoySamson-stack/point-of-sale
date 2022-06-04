@@ -7,8 +7,7 @@ import string
 
 CUSTOMERS=[]
   
-random = ''.join([random.choice(string.ascii_letters
-            + string.digits) for n in range(4)])
+
   
   
 class Customer:
@@ -72,7 +71,7 @@ def add_customer():
 
  
   # print (random)
-  id = random
+  id = str(random.randint(1000, 9999))
   name = input("Enter your name").capitalize()
   address = input("Enter the address").capitalize()
   phonenumber = input("Enter the phonenumber")
