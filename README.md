@@ -17,7 +17,7 @@ This is a CLI program that does simple saving, retrieval and manipulation of dat
 ~ purchases.txt - has the orders made by the customers</br>
 
 ## Programme
-![Main](main.py) 
+![Main](mainmenu.py) 
 
 ## Support and contact details
 For any queries and suggestions, please contact the support team via **Email: roysamson494@gmail.com**
