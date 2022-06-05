@@ -65,7 +65,6 @@ def make_purchases():
         if re.search(item_name, line):
           words=line.split()
           order += str(words)
-          # print(order)    
           price = words[4]
           stock = words[6]
           if int(stock) >= int(quantity):
