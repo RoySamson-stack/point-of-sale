@@ -19,8 +19,8 @@ class Customer:
     # self.customer()
 
   def __str__(self):
-      return f'{self.id}-- {self.name} -- {self.address} -- {self.phonenumber}'
-
+      return f'{self.id} -- {self.name} -- {self.address} -- {self.phonenumber}'
+ 
 
   
 def customer():

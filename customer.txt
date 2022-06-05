@@ -1,7 +1,7 @@
-KqDB-- Trevor -- Garissa -- 970780
-wXvb-- Olivia -- Oloitoktok -- 8970
-ztic-- Kenneth -- Lamu -- 08784542
-49Xq-- Maureen -- Kikuyu -- 97080492
-ybYy-- Darryl -- Nairobi -- 070234
-10hc-- Nazra -- Nakuru -- 0090234
-8124-- Vincent -- Maimahiu -- 020302424
+1040 -- Trevor -- Garissa -- 970780
+2289 -- Olivia -- Oloitoktok -- 8970
+7081 -- Kenneth -- Lamu -- 08784542
+2456 -- Maureen -- Kikuyu -- 97080492
+6754 -- Darryl -- Nairobi -- 070234
+8963 -- Nazra -- Nakuru -- 0090234
+8124 -- Vincent -- Maimahiu -- 020302424
