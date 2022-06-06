@@ -2,5 +2,5 @@
 9e1-c18cc2c36f2f  Customer name: Kenneth Products: Eggs Quantity: 90 Total: 1350
 8124  Customer name: Vincent Products: Eggs Quantity: 5 Total: 75
 8124  Customer name: Vincent Products: Eggs Quantity: 4 Total: 60
-8424 -- 8124 -- Milk -- 50 -- 5
-8686 -- 1040 -- Milk -- 50 -- 5
+
+8501 -- 1040 -- ['Milk', 'Eggs'] -- [250, 30] -- [5, 2]

@@ -65,7 +65,7 @@ def search_customer():
     if re.search(name, line):
       words=line.split()
       names.append(words)        
-  print(words)   
+      print(words)   
         
 def add_customer():
 
