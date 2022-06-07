@@ -4,3 +4,5 @@
 8124  Customer name: Vincent Products: Eggs Quantity: 4 Total: 60
 
 8501 -- 1040 -- ['Milk', 'Eggs'] -- [250, 30] -- [5, 2]
+2867 -- 1040 -- ['Soda'] -- [480] -- [4]
+8201 -- 8124 -- ['Shampoo'] -- [1000] -- [4]

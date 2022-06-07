@@ -59,7 +59,6 @@ def search_purchases():
   
 #add validation and check if name is twice then use the id the get the customer details
 def make_purchases():
-      pur_line = " "
       id_paste=input("Enter the customer id: " )
       matches=""
       names = ""
@@ -100,8 +99,7 @@ def make_purchases():
                           print(items)
                           print(all_total)
                           print(total)
-                          new_line = pur_line.join(p)
-                          new_file = new_line.replace(stock, str(rem_stock))
+                          
                           print("")
                           option = input("Enter Y to continue shopping and N to cashout ").upper()
                           
@@ -127,15 +125,14 @@ def make_purchases():
           print("There is not search id kindly try again")   
 
 
-      with open("products.txt", "w") as f:
-        f.write(new_file)  
+        
       new_order = Purchases(pur_id,  cus_id, items, all_total, all_quantity)#add all quantity 
       final_order=""
       final_order += str(new_order)
       file = open("purchases.txt", "a")
       file.write(str(final_order) + "\n")    
 
- 
+
 #use replace for the updating of the quanti
    
 
