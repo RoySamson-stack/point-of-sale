@@ -79,28 +79,108 @@ def add_item():
     
   #function to update an item in the list        
 def update_item():
-  item=input("Enter the item to search ").strip()
-  new_item = input("Enter the item name update ")
-  price = input("Enter the price update")
-  stock = input("Enter the Stock update")
-  newdata = ""
-  order=[]
-  f = open("products.txt", "r+")
-  file = f.readlines()
-  order.extend( [new_item, price])
-  for line in file:
-    if item+"\n" in line:
-      words=line.strip(line)
-      file.remove(item+"\n")
-    if item in line:
-      file.remove(line)
-      file.append(str(order))
-  print(file)
-  for item in file:
-    newdata += item
+  print("1. Name update \n2. Price update \n3. Quantity update \n4. Update all \n5. Exit")
+  option=int(input("Enter the option you want pt update"))
+  f = open("products.txt", "r").readlines()
+  # file = open("products.txt", "w")
+  if option == 1:
+      file = open("products.txt", "r")
+      fr = file.readlines()
+      id = input("Enter the customer id: ")
+      for line in open("products.txt", "r"):
+        if re.search(id, line):
+          words=line.split()
+          print(words)
+          new_name = input("Enter the new name: ")
+          old_name = words[2]
+          string = " " 
+          new_file = string.join(fr)
+          new_data = new_file.replace(old_name, new_name)
+          # print(new_file)
+          # print(new_data)
+          
+          with open("products.txt", "w") as f:
+            f.write(new_data)
+        
+              
+  elif option == 2:
+      file = open("products.txt", "r")
+      fr = file.readlines()
+      id = input("Enter the customer id: ")
+      for line in open("products.txt", "r"):
+        if re.search(id, line):
+          words=line.split()
+          print(words)
+          new_price = input("Enter the new price: ")
+          old_price = words[4]
+          string = " " 
+          new_file = string.join(fr)
+          new_data = new_file.replace(old_price, new_price)
+          # print(new_file)
+          # print(new_data)
+          
+          with open("products.txt", "w") as f:
+            f.write(new_data)
 
-  f = open("products.txt", "w")
-  f.write(newdata)
+  elif option == 3:
+      file = open("products.txt", "r")
+      fr = file.readlines()
+      id = input("Enter the customer id: ")
+      for line in open("products.txt", "r"):
+        if re.search(id, line):
+          words=line.split()
+          print(words)
+          new_quantity = input("Enter the new quantity: ")
+          old_quantity = words[6]
+          string = " " 
+          new_file = string.join(fr)
+          new_data = new_file.replace(old_quantity, new_quantity)
+          # print(new_file)
+          # print(new_data)
+          
+          with open("products.txt", "w") as f:
+            f.write(new_data)
+            
+  elif option == 4:
+          name=input("Enter the name to search ").strip()
+          for line in open("products.txt", "r+"):
+            if re.search(name, line):
+              words=line.split()
+              print(words)
+          id=input("Enter the id to search ").strip()
+          for line in open("products.txt", "r+"):
+            if re.search(id, line):
+              words=line.split()
+              print(words)
+          new_name = input("Enter the name update to update ")
+          address = input("Enter the address update")
+          phonenumber = input("Enter the phonenumber update")
+          newdata = ""
+          # file = open("products.txt", "r+")
+          order=[]
+          f = open("products.txt", "r+").readlines()
+          print(f)
+          order.extend( [new_name, address, phonenumber])
+          for line in f:
+            if name+"\n" in line:
+              #striing the line with the name
+              words=line.strip(line)
+              #removing the line that has a match of the name entered
+              f.remove(name+"\n")
+            if name in line:
+              f.remove(line)
+              #here we append the new data that has been entered and putting it in a list
+              f.append(str(order))
+          print(f)
+          for name in f:
+            newdata += Customer(id, new_name, address, phonenumber)
+        #writing the new data to the file
+          f = open("products.txt", "w")
+          f.write(newdata)     
+  elif option == 5:
+    quit()                     
+  else:
+    print("Enter a valid answer")
 
 
   #adding an item to the menu 
