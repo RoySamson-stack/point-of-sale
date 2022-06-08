@@ -12,3 +12,4 @@ Purchase id: 9120 -- Customer id: 2289 -- items purchased: ['Toiletpaper'] -- Pr
 Purchase id: 7484 -- Customer id: 1040 -- items purchased: ['Doormat'] -- Price of the items: [250] -- quantity of the items: [1]
 Purchase id: 3791 -- Customer id: 1040 -- items purchased: ['Eggs'] -- Price of the items: [45] -- quantity of the items: [3]
 Purchase id: 6920 -- Customer id: 6754 -- items purchased: ['Toiletpaper'] -- Price of the items: [750] -- quantity of the items: [5]
+Purchase id: 3659 -- Customer id: 1040 -- items purchased: ['Shampoo'] -- Price of the items: [1000] -- quantity of the items: [4]

@@ -5,9 +5,7 @@ import uuid
 import random 
 import string
 
-random = ''.join([random.choice(string.ascii_letters
-            + string.digits) for n in range(4)])
-  
+
 PRODUCTS=[]
 class Product:
   def __init__(self,id=None, item=None, price=None, stock=None):
@@ -64,7 +62,7 @@ def search_item():
   #function to add items to the item list   
 def add_item():
   order = ""
-  id = random
+  id = str(random.randint(1000, 9999))
   item = input("Enter the item to add to list")
   price = input("Enter the price")
   stock = input("Enter the stock")
@@ -79,7 +77,7 @@ def add_item():
     
   #function to update an item in the list        
 def update_item():
-  print("1. Name update \n2. Price update \n3. Quantity update \n4. Update all \n5. Exit")
+  print("1. Name update \n2. Price update \n3. Quantity update \n4. Back to Product  menu")
   option=int(input("Enter the option you want pt update"))
   f = open("products.txt", "r").readlines()
   # file = open("products.txt", "w")
@@ -101,6 +99,7 @@ def update_item():
           
           with open("products.txt", "w") as f:
             f.write(new_data)
+            print("Product updated")
         
               
   elif option == 2:
@@ -121,6 +120,7 @@ def update_item():
           
           with open("products.txt", "w") as f:
             f.write(new_data)
+            print("Price updated")
 
   elif option == 3:
       file = open("products.txt", "r")
@@ -140,48 +140,15 @@ def update_item():
           
           with open("products.txt", "w") as f:
             f.write(new_data)
+            print("Quantity updated")
             
   elif option == 4:
-          name=input("Enter the name to search ").strip()
-          for line in open("products.txt", "r+"):
-            if re.search(name, line):
-              words=line.split()
-              print(words)
-          id=input("Enter the id to search ").strip()
-          for line in open("products.txt", "r+"):
-            if re.search(id, line):
-              words=line.split()
-              print(words)
-          new_name = input("Enter the name update to update ")
-          address = input("Enter the address update")
-          phonenumber = input("Enter the phonenumber update")
-          newdata = ""
-          # file = open("products.txt", "r+")
-          order=[]
-          f = open("products.txt", "r+").readlines()
-          print(f)
-          order.extend( [new_name, address, phonenumber])
-          for line in f:
-            if name+"\n" in line:
-              #striing the line with the name
-              words=line.strip(line)
-              #removing the line that has a match of the name entered
-              f.remove(name+"\n")
-            if name in line:
-              f.remove(line)
-              #here we append the new data that has been entered and putting it in a list
-              f.append(str(order))
-          print(f)
-          for name in f:
-            newdata += Customer(id, new_name, address, phonenumber)
-        #writing the new data to the file
-          f = open("products.txt", "w")
-          f.write(newdata)     
+    product()
   elif option == 5:
-    quit()                     
+    quit()
   else:
-    print("Enter a valid answer")
-
+    print("KIndly enter a valid option")    
+  
 
   #adding an item to the menu 
 def delete_item():

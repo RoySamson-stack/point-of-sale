@@ -103,7 +103,7 @@ def make_purchases():
                           print(total)
                           new_line = pur_line.join(p)
                           new_file = new_line.replace(stock, str(rem_stock))
-                          print(new_file)
+                          # print(new_file)
                           option = input("Enter Y to continue shopping and N to cashout ").upper()
                           
                           if option == "Y":
@@ -113,11 +113,14 @@ def make_purchases():
                               print(item_total)
                               print("total:",   item_total)
                               if (int(total) > 0):
-                                          recieve = int(input("Input Money Recieve:\n"))
-                                          change = recieve - item_total
-                                          receipt += ("\t **Receipt**" + "\n \t" +  "*Items*" + "\n \t" + str(items) + " = " + str(quantity) + "\n \t" + "Total:" + str(item_total)  +"\n \t" + "Change:" + str(change))
-                                          print(receipt)
-                                          print("*****Thank You Come Again!!!*****")
+                                          receive = int(input("Input Money received:\n"))
+                                          if receive >= total:
+                                            change = receive - item_total
+                                            receipt += ("\t **Receipt**" + "\n \t" +  "*Items*" + "\n \t" + str(items) + " = " + str(quantity) + "\n \t" + "Total:" + str(item_total)  +"\n \t" + "Change:" + str(change))
+                                            print(receipt)
+                                            print("*****Thank You Come Again!!!*****")
+                                          elif receive < total:
+                                            print("Money is too little to comlete purchase")  
                               countinue_buy = False            
                               
                       elif stock <= quantity:
