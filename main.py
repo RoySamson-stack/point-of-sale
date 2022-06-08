@@ -4,9 +4,8 @@ from purchase import main_purchases
 
 def shop():
     while True:
-        print(" 1. Customer Operations \n2. Product OPerations \n3. Purchase operation")
-        print(" 2 : Product Operations")
-        print(" 3 : Purchase Operations")
+        print("1. Customer Operations \n2. Product OPerations \n3. Purchase operation \n4. Exit")
+    
 
         option = int(input(" Enter your choice: \n"))
 
@@ -19,6 +18,8 @@ def shop():
         elif option == 3:
             main_purchases()
             break
+        elif option == 4:
+          quit()  
         else:
             print("Invalid option kindly enter again")
             shop()

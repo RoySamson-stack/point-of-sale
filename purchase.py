@@ -16,7 +16,7 @@ class Purchases():
     
     
   def __str__(self):
-    return f'{self.pur_id} -- {self.cus_id} -- {self.item_name} -- {self.price} -- {self.quantity}'  
+    return f'Purchase id: {self.pur_id} -- Customer id: {self.cus_id} -- items purchased: {self.item_name} -- Price of the items: {self.price} -- quantity of the items: {self.quantity}'  
     
 c = open("customer.txt", "r").readlines()
 p = open("products.txt", "r").readlines()
@@ -38,7 +38,8 @@ def main_purchases():
       elif option == 4:
         quit()  
           
-    
+# def view_items():
+      
 def search_item():
   items=input("Enter the item to search") 
   menu=[]
@@ -102,7 +103,7 @@ def make_purchases():
                           print(total)
                           new_line = pur_line.join(p)
                           new_file = new_line.replace(stock, str(rem_stock))
-                          print("")
+                          print(new_file)
                           option = input("Enter Y to continue shopping and N to cashout ").upper()
                           
                           if option == "Y":
@@ -114,7 +115,7 @@ def make_purchases():
                               if (int(total) > 0):
                                           recieve = int(input("Input Money Recieve:\n"))
                                           change = recieve - item_total
-                                          receipt += ("**Receipt**" + "\n" +  "*Items*" + "\n" + str(items) + " = " + str(quantity) + "\n" + "Total:" + str(item_total) + "\n" + "Chanege:" + str(change))
+                                          receipt += ("\t **Receipt**" + "\n \t" +  "*Items*" + "\n \t" + str(items) + " = " + str(quantity) + "\n \t" + "Total:" + str(item_total)  +"\n \t" + "Change:" + str(change))
                                           print(receipt)
                                           print("*****Thank You Come Again!!!*****")
                               countinue_buy = False            
@@ -124,7 +125,7 @@ def make_purchases():
                           make_purchase()           #             quit()
                                       
       elif cus_id != int(id_paste):
-          print("There is not search id kindly try again")   
+          print("There is no such id kindly try again")   
 
 
       with open("products.txt", "w") as f:
@@ -136,7 +137,6 @@ def make_purchases():
       file.write(str(final_order) + "\n")    
 
  
-#use replace for the updating of the quanti
    
 
 if __name__=="__main__":

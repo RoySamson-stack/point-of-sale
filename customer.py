@@ -150,44 +150,44 @@ def update_customer():
           with open("customer.txt", "w") as f:
             f.write(new_data)
             
-  elif option == 4:
-          name=input("Enter the name to search ").strip()
-          for line in open("customer.txt", "r+"):
-            if re.search(name, line):
-              words=line.split()
-              print(words)
-          id=input("Enter the id to search ").strip()
-          for line in open("customer.txt", "r+"):
-            if re.search(id, line):
-              words=line.split()
-              print(words)
-          new_name = input("Enter the name update to update ")
-          address = input("Enter the address update")
-          phonenumber = input("Enter the phonenumber update")
-          newdata = ""
-          # file = open("customer.txt", "r+")
-          order=[]
-          f = open("customer.txt", "r+").readlines()
-          print(f)
-          order.extend( [new_name, address, phonenumber])
-          for line in f:
-            if name+"\n" in line:
-              #striing the line with the name
-              words=line.strip(line)
-              #removing the line that has a match of the name entered
-              f.remove(name+"\n")
-            if name in line:
-              f.remove(line)
-              #here we append the new data that has been entered and putting it in a list
-              f.append(str(order))
-          print(f)
-          for name in f:
-            newdata += Customer(id, new_name, address, phonenumber)
-        #writing the new data to the file
-          f = open("customer.txt", "w")
-          f.write(newdata)     
-  elif option == 5:
-    quit()                     
+  # elif option == 4:
+  #         name=input("Enter the name to search ").strip()
+  #         for line in open("customer.txt", "r+"):
+  #           if re.search(name, line):
+  #             words=line.split()
+  #             print(words)
+  #         id=input("Enter the id to search ").strip()
+  #         for line in open("customer.txt", "r+"):
+  #           if re.search(id, line):
+  #             words=line.split()
+  #             print(words)
+  #         new_name = input("Enter the name update to update ")
+  #         address = input("Enter the address update")
+  #         phonenumber = input("Enter the phonenumber update")
+  #         newdata = ""
+  #         # file = open("customer.txt", "r+")
+  #         order=[]
+  #         f = open("customer.txt", "r+").readlines()
+  #         print(f)
+  #         order.extend( [new_name, address, phonenumber])
+  #         for line in f:
+  #           if name+"\n" in line:
+  #             #striing the line with the name
+  #             words=line.strip(line)
+  #             #removing the line that has a match of the name entered
+  #             f.remove(name+"\n")
+  #           if name in line:
+  #             f.remove(line)
+  #             #here we append the new data that has been entered and putting it in a list
+  #             f.append(str(order))
+  #         print(f)
+  #         for name in f:
+  #           newdata += Customer(id, new_name, address, phonenumber)
+  #       #writing the new data to the file
+  #         f = open("customer.txt", "w")
+  #         f.write(newdata)     
+  # elif option == 5:
+  #   quit()                     
   else:
     print("Enter a valid answer")
 

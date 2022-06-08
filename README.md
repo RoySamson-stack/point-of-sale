@@ -1,11 +1,12 @@
 # point-of-sale
 A simple CLI program that acts like a Point of sale system using Object Oriented programming. 
 
-#### Author: Roy Samson
+## Prerequis
 ## Description
 
 This is a CLI program that does simple saving, retrieval and manipulation of data for purchases, customers and products and saves that data to txt files with each having its respecttive data saved to files.
 
+## How it works
 To execute the program run the ![Main file](main.py)
 
 ## Application Structure
