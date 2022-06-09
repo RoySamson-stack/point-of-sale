@@ -70,6 +70,7 @@ def make_purchases():
               words=line.split()
               names += str(words)
               cus_id = int(words[0])
+              cus_name = words[2]
               
       if cus_id == int(id_paste):
           items = []
@@ -99,7 +100,14 @@ def make_purchases():
                           all_total.append(total)
                           all_quantity.append(quantity)
                           print(items)
-                          print(all_total)
+                          name_items = ""
+                          total_item = ""
+                          q_items = ""
+                          new_items = name_items.join(items) 
+                          al_quantity = q_items.join(str(all_quantity))
+                          al_total = total_item.join(str(all_total))
+                          
+                          # print(all_total)
                           print(total)
                           new_line = pur_line.join(p)
                           new_file = new_line.replace(stock, str(rem_stock))
@@ -112,20 +120,38 @@ def make_purchases():
                               item_total = sum(all_total)
                               print(item_total)
                               print("total:",   item_total)
+                              
+                              i ="\t \n".join(map(str, items))
+                              x ='\t \n'. join(map(str, all_quantity))
+                              y = '\t \n'. join(map(str, all_total))
                               if (int(total) > 0):
                                           receive = int(input("Input Money received:\n"))
                                           if receive >= total:
                                             change = receive - item_total
-                                            receipt += ("\t **Receipt**" + "\n \t" +  "*Items*" + "\n \t" + str(items) + " = " + str(quantity) + "\n \t" + "Total:" + str(item_total)  +"\n \t" + "Change:" + str(change))
-                                            print(receipt)
+                                           
+                                            # receipt += ("\t Receipt" + "\n \t" +  "*Items*" + "\n \t" + str(items) + " = " + str(quantity) + "\n \t" + "Total:" + str(item_total)  +"\n \t" + "Change:" + str(change))
+                                            #try to make the print out like a real receipt
+                                            print(f'''    
+                                                          --------- Receipt ---------
+                                                    Customer ID         :      {cus_id}
+                                                    Customer Name       :      {cus_name}
+                                                    Products id         :      {item}
+                                                    Product Names       :      {new_items}
+                                                    Prices              :      {al_total}
+                                                    Quantities          :      {al_quantity}
+                                                    Totals              :      {total}
+                                                    Paid                :      {receive}
+                                                    Change              :      {change}
+                                                  ''')
+                                            # print(receipt)
                                             print("*****Thank You Come Again!!!*****")
                                           elif receive < total:
                                             print("Money is too little to comlete purchase")  
                               countinue_buy = False            
                               
-                      elif stock <= quantity:
+                      elif int(stock) <= int(quantity):
                           print("The order cannot be completed quantity is too high")  
-                          make_purchase()           #             quit()
+                          make_purchases()           #             quit()
                                       
       elif cus_id != int(id_paste):
           print("There is no such id kindly try again")   

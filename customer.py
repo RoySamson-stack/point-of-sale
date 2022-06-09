@@ -92,7 +92,6 @@ def update_customer():
   f = open("customer.txt", "r").readlines()
   # file = open("customer.txt", "w")
   if option == 1:
-     if option == 1:
         file = open("customer.txt", "r")
         fr = file.readlines()
         id = input("Enter the customer id: ")
@@ -111,7 +110,7 @@ def update_customer():
             with open("customer.txt", "w") as f:
               f.write(new_data)
               print("customer updated")
-     customer()
+        customer()
               
   elif option == 2:
       file = open("customer.txt", "r")
