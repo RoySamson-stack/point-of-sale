@@ -100,6 +100,7 @@ def update_item():
           with open("products.txt", "w") as f:
             f.write(new_data)
             print("Product updated")
+            product()
         
               
   elif option == 2:

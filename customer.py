@@ -22,12 +22,12 @@ class Customer:
       return f'{self.id} -- {self.name} -- {self.address} -- {self.phonenumber}'
  
 
-  
+    
 def customer():
   
       while True:
         print("Select a Customer Operation.")
-        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Search customer \n6. Main menu" )
+        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Search customer \n6. customer menu" )
         option = int(input("Enter your option"))
 
         if option == 1:
@@ -44,8 +44,8 @@ def customer():
             break
         elif option == 5:
             search_customer()
-        elif option == 6:
-            shop()    
+        # elif option == 6:
+        #     customer()    
         else:  
             print("Invalid option")
             customer()
@@ -57,19 +57,18 @@ def all_customers():
   for line in f:
     print(line)
     CUSTOMERS.append(line)
+  customer()
     
 def search_customer():
-  name=input("Enter the customer name to search") 
-  names=[]
+  id=input("Enter the customer name to search") 
+  ids=[]
   for line in open("customer.txt", "r"):
-    if re.search(name, line):
+    if re.search(id, line):
       words=line.split()
-      names.append(words)        
+      ids.append(words)        
       print(words)   
         
 def add_customer():
-
- 
   # print (random)
   id = str(random.randint(1000, 9999))
   name = input("Enter your name").capitalize()
@@ -84,7 +83,7 @@ def add_customer():
     f.write(str(order) + "\n")
     print(f"Customer{id} -- {name} been added")
   
-    
+    customer()
   #will try to add whereby a specific input field can be updated 
   #strip the line then split the name the change the name or specific input field  
 def update_customer():
@@ -93,24 +92,26 @@ def update_customer():
   f = open("customer.txt", "r").readlines()
   # file = open("customer.txt", "w")
   if option == 1:
-      file = open("customer.txt", "r")
-      fr = file.readlines()
-      id = input("Enter the customer id: ")
-      for line in open("customer.txt", "r"):
-        if re.search(id, line):
-          words=line.split()
-          print(words)
-          new_name = input("Enter the new name: ")
-          old_name = words[2]
-          string = " " 
-          new_file = string.join(fr)
-          new_data = new_file.replace(old_name, new_name)
-          # print(new_file)
-          # print(new_data)
-          
-          with open("customer.txt", "w") as f:
-            f.write(new_data)
-            print("Customer has been updated")
+     if option == 1:
+        file = open("customer.txt", "r")
+        fr = file.readlines()
+        id = input("Enter the customer id: ")
+        for line in open("customer.txt", "r"):
+          if re.search(id, line):
+            words=line.split()
+            print(words)
+            new_name = input("Enter the new name: ")
+            old_name = words[2]
+            string = " " 
+            new_file = string.join(fr)
+            new_data = new_file.replace(old_name, new_name)
+            # print(new_file)
+            # print(new_data)
+            
+            with open("customer.txt", "w") as f:
+              f.write(new_data)
+              print("customer updated")
+     customer()
               
   elif option == 2:
       file = open("customer.txt", "r")
@@ -131,7 +132,8 @@ def update_customer():
           with open("customer.txt", "w") as f:
             f.write(new_data)
             print("address updated")
-
+          customer()
+            
   elif option == 3:
       file = open("customer.txt", "r")
       fr = file.readlines()
@@ -151,24 +153,26 @@ def update_customer():
           with open("customer.txt", "w") as f:
             f.write(new_data)
             print("phonenumber updated")
+            customer()
   elif option == 4:
       customer()
   elif option == 5:
       quit()
   else:
-      print("KIndly enter a valid option")                      
+      print("Kindly enter a valid option")
+      update()                      
         
 
 def delete_customer():
-  name = input("Enter the name you want to search")
-  name_a = ""
+  # id = input("Enter the name you want to search")
+  # name_a = ""
   newdata = ""
   f = open("customer.txt","r").readlines()
-  for line in open("customer.txt", 'r'):
-      if re.search(name, line):
-          names=line.split()
-          name_a += str(names)
-  print(name_a)
+  # for line in open("customer.txt", 'r'):
+  #     if re.search(id, line):
+  #         names=line.split()
+  #         name_a += str(id)
+  # print(name_a)
   id = input("Enter the id to delete")       
   for line in f:
     if id+"\n" in line:
@@ -176,16 +180,16 @@ def delete_customer():
       words=line.strip(line)
       #removing the line completely from the file
       f.remove(id+"\n")
-    if name in line:
+    if id in line:
       f.remove(line)
   print("Successfully deleted")    
-  print(f)
+  # print(f)
+  
   for id in f:
     newdata += id
 
   f = open("customer.txt", "w")
   f.write(newdata)
-  
   
 
 
