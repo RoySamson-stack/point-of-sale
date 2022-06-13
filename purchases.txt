@@ -18,3 +18,4 @@ Purchase id: 3658 -- Customer id: 8963 -- items purchased: ['Milk', 'Eggs'] -- P
 Purchase id: 8147 -- Customer id: 8124 -- items purchased: ['Soda', 'Shampoo'] -- Price of the items: [600, 500] -- quantity of the items: [5, 2]
 Purchase id: 5124 -- Customer id: 8124 -- items purchased: ['Shampoo', 'Soda'] -- Price of the items: [1000, 480] -- quantity of the items: [4, 4]
 Purchase id: 8170 -- Customer id: 1040 -- items purchased: ['Milk', 'Wheatflour'] -- Price of the items: [200, 520] -- quantity of the items: [4, 4]
+Purchase id: 4858 -- Customer id: 2289 -- items purchased: ['Toiletpaper', 'Eggs'] -- Price of the items: [600, 60] -- quantity of the items: [5, 5]

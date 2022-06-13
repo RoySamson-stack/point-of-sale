@@ -19,25 +19,36 @@ class Product:
 
 def product():
   #printing the option from which a user picks 
-  print("1. Search item \n2. Add item \n3. Update item \n4. Delete item \n5. Exit ")
-  option = input("Enter the option you want")
+  print('''
+  ---Product menu----
+   1. Search item
+   2. Add item
+   3. Update item
+   4. Delete item 
+   5.Main menu
+   6. Exit
+  ''')
+  option = int(input("Enter the option you want"))
   
   for line in open("products.txt", "r"):
     print(str(line))
   while True:
-    if option == "1":
+    if option == 1:
       search_item()
       break
-    elif option == "2":
+    elif option == 2:
       add_item()
       break
-    elif option == "3":
+    elif option == 3:
       update_item()
       break
-    elif option == "4":
+    elif option == 4:
       delete_item() 
       break 
-    elif option == "5":
+    elif option == 5:
+      from main import shop
+      shop()  
+    elif option == 6:
       quit()      
     else:
       print("Please enter a valid option")

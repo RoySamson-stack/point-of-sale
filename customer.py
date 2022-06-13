@@ -27,7 +27,15 @@ def customer():
   
       while True:
         print("Select a Customer Operation.")
-        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Search customer \n6. Main menu" )
+        print('''
+          ----Customer menu-----    
+          1. All customer 
+          2. Add customer 
+          3. Update customer 
+          4. Delete customer
+          5. Search customer 
+          6. Main menu
+        ''' )
         option = int(input("Enter your option"))
 
         if option == 1:
@@ -72,8 +80,8 @@ def search_customer():
 def add_customer():
   # print (random)
   id = str(random.randint(1000, 9999))
-  name = input("Enter your name").capitalize()
-  address = input("Enter the address").capitalize()
+  name = input("Enter your name").lower().capitalize()
+  address = input("Enter the address").lower().capitalize()
   phonenumber = input("Enter the phonenumber")
   new_Customer = Customer(id, name, address, phonenumber)
  
@@ -84,7 +92,7 @@ def add_customer():
     f.write(str(order) + "\n")
     print(f"Customer{id} -- {name} been added")
   
-    customer()
+  customer()
   #will try to add whereby a specific input field can be updated 
   #strip the line then split the name the change the name or specific input field  
 def update_customer():

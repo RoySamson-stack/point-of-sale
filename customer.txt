@@ -5,3 +5,6 @@
  6754 -- Darryl -- Nairobi -- 070234
  8963 -- Nazra -- Nakuru -- 0090234
  8124 -- Vincent -- Mombasa -- 020302424
+6983 -- Rick -- Kisumu  -- 02304983
+6355 -- Ricko-mode -- Kiambu -- 095345345
+8356 -- Samuel -- Garissa -- 089534535

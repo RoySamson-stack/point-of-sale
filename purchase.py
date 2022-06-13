@@ -45,21 +45,22 @@ def main_purchases():
       
 def search_item():
   items=input("Enter the item to search") 
-  menu=[]
+  menu=""
   for line in open("products.txt", "r"):
     if re.search(items, line):
       words=line.split()
-      menu.append(words)            
-  print(words)  
+      menu += str(words)            
+  print(menu)  
          
 def search_purchases():
   id = input("Enter the purchase id") 
-  order=[]
+  order=""
+  word=""
   for line in open("purchases.txt", "r"):
     if re.search(id, line):
       words=line.split()
-      order.append(words)        
-  print(words)   
+      order+= word.join(words)        
+  print(order)   
   
 #add validation and check if name is twice then use the id the get the customer details
 def make_purchases():

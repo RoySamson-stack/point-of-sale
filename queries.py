@@ -21,7 +21,7 @@ def queries():
 
 def count_customer():
   all_customers = len(f.readlines())
-  print( "You have "  + str(all_customers )+ " customers")
+  print( "You have "  + str(all_customers) + " customers")
   
 def count_items():
   all_items = len(p.readlines()) 
