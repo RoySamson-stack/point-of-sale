@@ -25,7 +25,7 @@ pur_id = str(random.randint(1000, 9999))
 
 def main_purchases():
   while True:
-      print("1. Search Item \n2. Search purchases \n3. Make a purchase \n4. Exit")
+      print("1. Search Item \n2. Search purchases \n3. Make a purchase \n4. Main menu \n5. Exit")
       option = int(input("Enter an option from the above"))
      
 
@@ -36,7 +36,10 @@ def main_purchases():
       elif option == 3:
         make_purchases()
       elif option == 4:
-        quit()  
+        from main import shop
+        shop()   
+      elif option == 5:
+        quit()
           
 # def view_items():
       
@@ -132,7 +135,7 @@ def make_purchases():
                                             # receipt += ("\t Receipt" + "\n \t" +  "*Items*" + "\n \t" + str(items) + " = " + str(quantity) + "\n \t" + "Total:" + str(item_total)  +"\n \t" + "Change:" + str(change))
                                             #try to make the print out like a real receipt
                                             print(f'''    
-                                                          --------- Receipt ---------
+                                                        --------- Receipt ---------
                                                     Customer ID         :      {cus_id}
                                                     Customer Name       :      {cus_name}
                                                     Products id         :      {item}
@@ -142,9 +145,9 @@ def make_purchases():
                                                     Totals              :      {total}
                                                     Paid                :      {receive}
                                                     Change              :      {change}
+                                                    *****Thank You Come Again!!!*****"
                                                   ''')
                                             # print(receipt)
-                                            print("*****Thank You Come Again!!!*****")
                                           elif receive < total:
                                             print("Money is too little to comlete purchase")  
                               countinue_buy = False            

@@ -27,7 +27,7 @@ def customer():
   
       while True:
         print("Select a Customer Operation.")
-        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Search customer \n6. customer menu" )
+        print("1. All customer \n2. Add customer \n3. Update customer \n4. Delete customer \n5. Search customer \n6. Main menu" )
         option = int(input("Enter your option"))
 
         if option == 1:
@@ -44,8 +44,9 @@ def customer():
             break
         elif option == 5:
             search_customer()
-        # elif option == 6:
-        #     customer()    
+        elif option == 6:
+          from main import shop
+          shop()    
         else:  
             print("Invalid option")
             customer()
@@ -163,15 +164,10 @@ def update_customer():
         
 
 def delete_customer():
-  # id = input("Enter the name you want to search")
-  # name_a = ""
+
   newdata = ""
   f = open("customer.txt","r").readlines()
-  # for line in open("customer.txt", 'r'):
-  #     if re.search(id, line):
-  #         names=line.split()
-  #         name_a += str(id)
-  # print(name_a)
+
   id = input("Enter the id to delete")       
   for line in f:
     if id+"\n" in line:
