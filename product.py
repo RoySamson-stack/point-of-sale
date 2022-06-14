@@ -61,14 +61,19 @@ def all_items():
     print(line)
     PRODUCTS.append(line)  
    #searching function for a user to input keywords
+   
 def search_item():
-  items=input("Enter the item to search") 
+  items=input("Enter the item id: ")
   menu=[]
   for line in open("products.txt", "r"):
     if re.search(items, line):
       words=line.split()
-      menu.append(words)            
-  print(words)  
+      id = words[0]
+      if int(items) == int(id):
+        print(words)
+      elif int(items) != int(id):
+        print("Product does not exist")  
+  product()      
   
   #function to add items to the item list   
 def add_item():

@@ -25,7 +25,13 @@ pur_id = str(random.randint(1000, 9999))
 
 def main_purchases():
   while True:
-      print("1. Search Item \n2. Search purchases \n3. Make a purchase \n4. Main menu \n5. Exit")
+      print('''
+            ----Purchase operation----
+            1. Search Item
+            2. Search purchases 
+            3. Make a purchase 
+            4. Main menu 
+            5. Exit''')
       option = int(input("Enter an option from the above"))
      
 

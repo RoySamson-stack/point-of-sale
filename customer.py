@@ -28,7 +28,7 @@ def customer():
       while True:
         print("Select a Customer Operation.")
         print('''
-          ----Customer menu-----    
+         ----Customer menu-----    
           1. All customer 
           2. Add customer 
           3. Update customer 
@@ -69,13 +69,17 @@ def all_customers():
   customer()
     
 def search_customer():
-  id=input("Enter the customer name to search") 
+  id=input("Enter the customer id to search") 
   ids=[]
   for line in open("customer.txt", "r"):
     if re.search(id, line):
       words=line.split()
-      ids.append(words)        
-      print(words)   
+      in_id = words[0]
+      if int(id) == int(in_id):
+        print(words)   
+      else:
+        print("The customer does not exist")  
+  customer() 
         
 def add_customer():
   # print (random)
