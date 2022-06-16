@@ -40,4 +40,3 @@ For any queries and suggestions, please contact the support team via **Email: ro
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-Copyright (c) 2021 **roy samson**
