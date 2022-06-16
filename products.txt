@@ -1,11 +1,11 @@
-3212 -- Toiletpaper -- 116 -- 250
-   6731 -- Doormat -- 250 -- 55
-   4352 -- Milk -- 50 -- 50
-   7882 -- Eggs  -- 12 -- 100
-   5667 -- Wheatflour -- 130 -- 150
-   1223 -- Soda  -- 116 -- 320
-   5647 -- Hapic -- 250 -- 400
-   1123 -- Shampoo -- 250 -- 95
-   3509 -- Samsungtv -- 150000 -- 170
-   2839 -- Sugar  -- 150 -- 116
-  9778 -- Blackleathershoes -- 2000 -- 340
+3212 -- Toiletpaper -- 120 -- 250
+6731 -- Doormat -- 250 -- 55
+4352 -- Milk -- 50 -- 50
+7882 -- Eggs  -- 12 -- 100
+5667 -- Wheatflour -- 130 -- 150
+1223 -- Soda  -- 116 -- 320
+5647 -- Hapic -- 250 -- 400
+1123 -- Shampoo -- 250 -- 95
+3509 -- Samsungtv -- 150000 -- 170
+2839 -- Sugar  -- 150 -- 116
+9778 -- Blackleathershoes -- 2000 -- 340

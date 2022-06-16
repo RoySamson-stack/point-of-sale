@@ -1,1 +1,0 @@
-Purchase id: 2838 -- Customer id: 5438 -- items purchased: ['Toiletpaper', 'Sugar'] -- Price of the items: [480, 600] -- quantity of the items: [4, 4]
