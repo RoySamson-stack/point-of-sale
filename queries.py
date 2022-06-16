@@ -4,7 +4,14 @@ f = open("customer.txt", "r")
 p = open("products.txt", "r")
 
 def queries():
-  print("1. Count customers \n2. Count products \n3. Items sorted \n4. Customer sorted")
+  print('''
+      ---Query menu----
+      1. Count customers 
+      2. Count products 
+      3. Items sorted 
+      4. Customer sorted 
+      5. Main menu
+  ''')
   option = int(input("Enter the option: "))
 
   if option == 1:
@@ -15,6 +22,9 @@ def queries():
     item_sort()
   elif option == 4:
     customer_sort()  
+  elif option == 5:
+    from main import shop
+    shop() 
   else:
     print("KIndly enter a valid option")   
     queries()   

@@ -84,9 +84,9 @@ def search_customer():
 def add_customer():
   # print (random)
   id = str(random.randint(1000, 9999))
-  name = input("Enter your name").lower().capitalize()
-  address = input("Enter the address").lower().capitalize()
-  phonenumber = input("Enter the phonenumber")
+  name = input("Enter customer name").lower().capitalize().replace(" ", "")
+  address = input("Enter customer address").lower().capitalize().replace(" ", "")
+  phonenumber = input("Enter customer phonenumber")
   new_Customer = Customer(id, name, address, phonenumber)
  
   order=""
@@ -94,7 +94,7 @@ def add_customer():
   #  str(myuuid) +  " -- "+ name + " -- " + address+ " -- "+  phonenumber 
   with open("customer.txt", 'a') as f:
     f.write(str(order) + "\n")
-    print(f"Customer{id} -- {name} been added")
+    print(f"Customer {id} -- {name} been added")
   
   customer()
   #will try to add whereby a specific input field can be updated 
@@ -112,7 +112,7 @@ def update_customer():
           if re.search(id, line):
             words=line.split()
             print(words)
-            new_name = input("Enter the new name: ")
+            new_name = input("Enter the new name: ").lower().capitalize().replace(" ", "")
             old_name = words[2]
             string = " " 
             new_file = string.join(fr)
@@ -123,7 +123,7 @@ def update_customer():
             with open("customer.txt", "w") as f:
               f.write(new_data)
               print("customer updated")
-        customer()
+            customer()
               
   elif option == 2:
       file = open("customer.txt", "r")
@@ -133,7 +133,7 @@ def update_customer():
         if re.search(id, line):
           words=line.split()
           print(words)
-          new_address = input("Enter the new address: ")
+          new_address = input("Enter the new address: ").lower().capitalize().replace(" ", "")
           old_address = words[4]
           string = " " 
           new_file = string.join(fr)
@@ -144,7 +144,7 @@ def update_customer():
           with open("customer.txt", "w") as f:
             f.write(new_data)
             print("address updated")
-          customer()
+      customer()
             
   elif option == 3:
       file = open("customer.txt", "r")
@@ -165,7 +165,8 @@ def update_customer():
           with open("customer.txt", "w") as f:
             f.write(new_data)
             print("phonenumber updated")
-            customer()
+      customer()
+      
   elif option == 4:
       customer()
   elif option == 5:

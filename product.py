@@ -20,13 +20,13 @@ class Product:
 def product():
   #printing the option from which a user picks 
   print('''
-  ---Product menu----
-   1. Search item
-   2. Add item
-   3. Update item
-   4. Delete item 
-   5.Main menu
-   6. Exit
+      ---Product menu----
+      1. Search item
+      2. Add item
+      3. Update item
+      4. Delete item 
+      5.Main menu
+      6. Exit
   ''')
   option = int(input("Enter the option you want"))
   
@@ -79,7 +79,7 @@ def search_item():
 def add_item():
   order = ""
   id = str(random.randint(1000, 9999))
-  item = input("Enter the item to add to list")
+  item = input("Enter the item to add to list").upper().replace(" ", "")
   price = input("Enter the price")
   stock = input("Enter the stock")
   print(item, "added to list ")
@@ -100,12 +100,12 @@ def update_item():
   if option == 1:
       file = open("products.txt", "r")
       fr = file.readlines()
-      id = input("Enter the customer id: ")
+      id = input("Enter the product id: ")
       for line in open("products.txt", "r"):
         if re.search(id, line):
           words=line.split()
           print(words)
-          new_name = input("Enter the new name: ")
+          new_name = input("Enter the new name: ").lower().capitalize().replace(" ", "")
           old_name = words[2]
           string = " " 
           new_file = string.join(fr)
@@ -116,13 +116,13 @@ def update_item():
           with open("products.txt", "w") as f:
             f.write(new_data)
             print("Product updated")
-            product()
+          product()
         
               
   elif option == 2:
       file = open("products.txt", "r")
       fr = file.readlines()
-      id = input("Enter the customer id: ")
+      id = input("Enter the product id: ")
       for line in open("products.txt", "r"):
         if re.search(id, line):
           words=line.split()
@@ -138,11 +138,12 @@ def update_item():
           with open("products.txt", "w") as f:
             f.write(new_data)
             print("Price updated")
+          product()  
 
   elif option == 3:
       file = open("products.txt", "r")
       fr = file.readlines()
-      id = input("Enter the customer id: ")
+      id = input("Enter the product id: ")
       for line in open("products.txt", "r"):
         if re.search(id, line):
           words=line.split()
@@ -158,6 +159,7 @@ def update_item():
           with open("products.txt", "w") as f:
             f.write(new_data)
             print("Quantity updated")
+          product()  
             
   elif option == 4:
     product()
@@ -169,23 +171,27 @@ def update_item():
 
   #adding an item to the menu 
 def delete_item():
-  item=input("Enter the item to search ").strip()
+  
   newdata = ""
-  f = open("products.txt", "r+")
-  file = f.readlines()
-  for line in file:
-      if item+"\n" in line:
-        words=line.strip(line)
-        file.remove(item+"\n")
-      if item in line:
-        file.remove(line)
-  print(file)
-  print(item, "has been deleted from list")
-  for item in file:
-      newdata += item
+  f = open("products.txt","r").readlines()
+
+  id = input("Enter the id to delete")       
+  for line in f:
+    if id+"\n" in line:
+      #strip the line that has a match with the name theat has been entered
+      words=line.strip(line)
+      #removing the line completely from the file
+      f.remove(id+"\n")
+    if id in line:
+      f.remove(line)
+  print("Successfully deleted")    
+  # print(f)
+  
+  for id in f:
+    newdata += id
 
   f = open("products.txt", "w")
-  f.write(newdata)     
+  f.write(newdata)    
     
   
    
