@@ -59,9 +59,10 @@ def all_items():
   file = open("products.txt", "a")
   for line in f:
     print(line)
-    PRODUCTS.append(line)  
+    PRODUCTS.append(line
+                    
+                    )  
    #searching function for a user to input keywords
-   
 def search_item():
   items=input("Enter the item id: ")
   menu=[]
@@ -110,8 +111,7 @@ def update_item():
           string = " " 
           new_file = string.join(fr)
           new_data = new_file.replace(old_name, new_name)
-          # print(new_file)
-          # print(new_data)
+         
           
           with open("products.txt", "w") as f:
             f.write(new_data)

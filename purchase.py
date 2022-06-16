@@ -68,7 +68,6 @@ def search_purchases():
       order+= word.join(words)        
   print(order)   
   
-#add validation and check if name is twice then use the id the get the customer details
 def make_purchases():
       pur_line = " "
       id_paste=input("Enter the customer id: " )
@@ -81,7 +80,7 @@ def make_purchases():
               names += str(words)
               cus_id = int(words[0])
               cus_name = words[2]
-              
+      #validating if the customer is saved in the customer tx        
       if cus_id == int(id_paste):
           items = []
           all_total = []
@@ -100,6 +99,7 @@ def make_purchases():
                       quantity = int(input("Enter the quantity:\n"))
                       price = words[4]
                       stock = words[6]
+                      #checking qunatity in stock to validate that the quantity written by user is not more than the qunatity in stock
                       if int(stock) >= int(quantity):
                           item_name = words[2]
                           total =  int(price) * int(quantity)
@@ -139,8 +139,7 @@ def make_purchases():
                                           if receive >= total:
                                             change = receive - item_total
                                            
-                                            # receipt += ("\t Receipt" + "\n \t" +  "*Items*" + "\n \t" + str(items) + " = " + str(quantity) + "\n \t" + "Total:" + str(item_total)  +"\n \t" + "Change:" + str(change))
-                                            #try to make the print out like a real receipt
+                                            #printing the receipt ony if the amount paid is not less than the total tp be paid
                                             print(f'''    
                                                         --------- Receipt ---------
                                                     Customer ID         :      {cus_id}

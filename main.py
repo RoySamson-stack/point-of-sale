@@ -5,11 +5,18 @@ from queries import queries
 
 def shop():
     while True:
-        print("1. Customer Operations \n2. Product OPerations \n3. Purchase operation \n4. Queries \n5. Exit")
+        print('''
+                ----Main menu----
+                1. Customer Operations 
+                2. Product OPerations 
+                3. Purchase operation 
+                4. Queries 
+                5. Exit
+        ''')
     
 
         option = int(input(" Enter your choice: \n"))
-
+    #getting the option and using an if else to help in navigation
         if option == 1:
             customer()
             break

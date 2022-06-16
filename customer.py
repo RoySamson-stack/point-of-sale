@@ -87,6 +87,7 @@ def add_customer():
   name = input("Enter customer name").lower().capitalize().replace(" ", "")
   address = input("Enter customer address").lower().capitalize().replace(" ", "")
   phonenumber = input("Enter customer phonenumber")
+  #using the customer object to get the details to be written in the text file 
   new_Customer = Customer(id, name, address, phonenumber)
  
   order=""
@@ -97,8 +98,7 @@ def add_customer():
     print(f"Customer {id} -- {name} been added")
   
   customer()
-  #will try to add whereby a specific input field can be updated 
-  #strip the line then split the name the change the name or specific input field  
+  
 def update_customer():
   print("1. Name update \n2. Address update \n3. Phonenumber update \n4. Back to customer menu \n5. Exit")
   option=int(input("Enter the option you want pt update"))
@@ -112,13 +112,14 @@ def update_customer():
           if re.search(id, line):
             words=line.split()
             print(words)
+            #removing the spacing from the inut from the user after getting the input
             new_name = input("Enter the new name: ").lower().capitalize().replace(" ", "")
             old_name = words[2]
             string = " " 
             new_file = string.join(fr)
+            #using replace to replace the old name with the new name
             new_data = new_file.replace(old_name, new_name)
-            # print(new_file)
-            # print(new_data)
+            
             
             with open("customer.txt", "w") as f:
               f.write(new_data)
@@ -138,8 +139,7 @@ def update_customer():
           string = " " 
           new_file = string.join(fr)
           new_data = new_file.replace(old_address, new_address)
-          # print(new_file)
-          # print(new_data)
+          
           
           with open("customer.txt", "w") as f:
             f.write(new_data)
@@ -157,11 +157,11 @@ def update_customer():
           new_number = input("Enter the new number: ")
           old_number = words[6]
           string = " " 
+          #turning the file to a stgring to remove its list form
           new_file = string.join(fr)
+          #using replace to replace the old number with the new one
           new_data = new_file.replace(old_number, new_number)
-          # print(new_file)
-          # print(new_data)
-          
+         
           with open("customer.txt", "w") as f:
             f.write(new_data)
             print("phonenumber updated")
