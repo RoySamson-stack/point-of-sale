@@ -16,7 +16,7 @@ def shop():
     
 
         option = int(input(" Enter your choice: \n"))
-    #getting the option and using an if else to help in navigation
+        #getting the option and using an if else to help in navigation
         if option == 1:
             customer()
             break
